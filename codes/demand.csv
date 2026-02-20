@@ -1,0 +1,50 @@
+A01,Agriculture and hunting
+A02,Forestry and logging
+A03,Fishing and aquaculture
+B05,Mining of coal and lignite
+B06,Extraction of crude petroleum and natural gas
+B07,Mining of metal ores
+B08,Other mining and quarrying
+B09,Mining support service activities
+C10T12,"Food products, beverages and tobacco"
+C13T15,"Textiles, textile products, leather and footwear"
+C16,Wood and products of wood and cork
+C17_18,Paper products and printing
+C19,Coke and refined petroleum products
+C20,Chemical and chemical products
+C21,"Pharmaceuticals, medicinal chemical and botanical products"
+C22,Rubber and plastics products
+C23,Other non-metallic mineral products
+C24A,Basic iron and steel
+C24B,Basic precious and other non-ferrous metals
+C25,Fabricated metal products
+C26,"Computer, electronic and optical equipment"
+C27,Electrical equipment
+C28,"Machinery and equipment, nec "
+C29,"Motor vehicles, trailers and semi-trailers"
+C301,Building of ships and boats
+C302T309,Other transport equipment
+C31T33,Furniture; other manufacturing; repair and installation of machinery and equipment
+D,"Electricity, gas, steam and air conditioning supply"
+E,"Water supply; sewerage, waste management and remediation activities"
+F,Construction
+G,Wholesale and retail trade; repair of motor vehicles
+H49,Land transport and transport via pipelines
+H50,Water transport
+H51,Air transport
+H52,Warehousing and support activities for transportation
+H53,Postal and courier activities
+I,Accommodation and food service activities
+J58T60,"Publishing, audiovisual and broadcasting activities"
+J61,Telecommunications
+J62_63,IT and other information services
+K,Financial and insurance activities
+L,Real estate activities
+M,"Professional, scientific and technical activities"
+N,Administrative and support services
+O,Public administration and defence; compulsory social security
+P,Education
+Q,Human health and social work activities
+R,"Arts, entertainment and recreation"
+S,Other service activities
+T,Activities of households as employers; undifferentiated goods- and services-producing activities of households for own use
