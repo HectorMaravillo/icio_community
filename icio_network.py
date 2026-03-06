@@ -3,8 +3,8 @@ import igraph as ig
 from numpy import nan, newaxis, repeat
 from pandas import DataFrame, MultiIndex, Series, read_csv
 
-from utils import path_data, value_added_names, final_demand_names
-from draw import draw_map
+from .utils import path_data, value_added_names, final_demand_names
+from .draw import draw_map
 
 class ICIO_Network():
     """
