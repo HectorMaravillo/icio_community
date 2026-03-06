@@ -4,8 +4,8 @@ from igraph import VertexClustering
 from numpy import argmax, sum
 from pandas import DataFrame
 
-from utils import countries, activities
-from draw import draw_communities, draw_map, draw_subgraph_network
+from .utils import countries, activities
+from .draw import draw_communities, draw_map, draw_subgraph_network
 
 
 class Communities(VertexClustering):
