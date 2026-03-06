@@ -13,7 +13,7 @@ from matplotlib.patches import Patch
 from seaborn import color_palette, heatmap
 from numpy import array, pi, dot, sqrt, nan, percentile
 
-from utils import countries, countries_names, countries_centers, final_demand_names, activities, activities_names
+from .utils import countries, countries_names, countries_centers, final_demand_names, activities, activities_names
 
 
 def create_colors(by = "country", n = 100):
