@@ -1,0 +1,20 @@
+# ignore ALL the __pycache__ folders in any subdirectory
+**/__pycache__/
+
+# Ignore the vscode folder
+.vscode/
+
+# ignore the logs folder
+logs/
+
+# ignore the .log files
+*.log
+
+# ignore the .pyc files
+*.pyc
+
+# ignore the .py.log files
+*.py.log
+
+
+
