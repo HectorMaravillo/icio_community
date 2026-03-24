@@ -1,13 +1,22 @@
+# ===========================================================
+# PACKAGES
+# ===========================================================
 import warnings
 
 from igraph import VertexClustering
 from numpy import argmax, sum
 from pandas import DataFrame
 
-from .utils import countries, activities
-from .draw import draw_communities, draw_map, draw_subgraph_network
+from icio_community.utils import countries, activities
+from icio_community.draw import (
+    draw_communities,
+    draw_map,
+    draw_subgraph_network
+    )
 
-
+# ===========================================================
+# CLASSES
+# ===========================================================
 class Communities(VertexClustering):
 
     # ATTRIBUTES

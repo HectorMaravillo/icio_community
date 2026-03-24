@@ -1,12 +1,23 @@
+# ===========================================================
+# PACKAGES
+# ===========================================================
 import igraph as ig
 
 from numpy import nan, newaxis, repeat
 from pandas import DataFrame, MultiIndex, Series, read_csv
 
-from .utils import path_data, value_added_names, final_demand_names
-from .draw import draw_map
+from icio_community.draw import draw_map
+from icio_community.utils import ( 
+    value_added_names, 
+    final_demand_names
+    )
+from icio_community.config import ICIO_TABLES_DIR
 
-class ICIO_Network():
+
+# ===========================================================
+# CLASSES
+# ===========================================================
+class ICIO_Network:
     """
     A class to model and analyze ICIO-OECD tables as weighted directed graph.
 
@@ -25,7 +36,8 @@ class ICIO_Network():
     g : igraph.Graph
         The directed graph representation  of intermediate flows.
     """
-
+    
+    # ------------------------------------------------------------------
     # ATTRIBUTES
     @property
     def year(self) -> int:
@@ -34,6 +46,7 @@ class ICIO_Network():
 
     @property
     def total_output(self) -> float:
+        """float: Total output of the ICIO table."""
         return self.__total_output
 
     @property
@@ -46,6 +59,7 @@ class ICIO_Network():
         """igraph.Graph: Directed graph of intermediate demand flows."""
         return self.__g
 
+    # ------------------------------------------------------------------
     # CONSTRUCTOR
     def __init__(self,
                  year: int,
@@ -60,7 +74,7 @@ class ICIO_Network():
         Parameters
         ----------
         year : int
-            Year of the ICIO table to load (must be between 1995 and 2020).
+            Year of the ICIO table to load (must be between 1995 and 2022).
         normalize : bool, optional
             Whether to normalize edge weights. Default is True.
         by_output : bool, optional
@@ -70,22 +84,33 @@ class ICIO_Network():
         RoW : bool, optional
             Whether to include Rest of the World (ROW) in the graph.
             Default is False.
+        diagonal : bool, optional
+            Whether to keep same country-activity self-links.
+            Default is True.
+        diagonal_country : bool, optional
+            Whether to keep within-country blocks.
+            If False, all same-country flows are removed.
+            Default is True.
 
         Raises
         ------
         ValueError
-            If the year is not within the range [1995, 2020].
+            If the year is not within the range valid range [1995, 2022].
         """
+        # Validate year range
         if (year < 1995) or (year > 2022):
             raise ValueError('Invalid year')
+        # Initialize ICIO_Network class
         self.__year = year
         self.__import_data(year, RoW)
         self.__g = self.__build_network(
             normalize = normalize, 
             by_output = by_output,
             diagonal = diagonal,
-            diagonal_country = diagonal_country)
+            diagonal_country = diagonal_country
+            )
 
+    # ------------------------------------------------------------------
     # METHODS
     def __import_data(self,
                       year: int,
@@ -97,6 +122,8 @@ class ICIO_Network():
         ----------
         year : int
             Year of the ICIO table.
+        RoW : bool
+            Whether to include Rest of the World (ROW).
 
         Returns
         -------
@@ -106,10 +133,10 @@ class ICIO_Network():
         
         # Import data
         print(f'Reading ICIO-OECD table ({self.year})')
-        filepath = path_data/f"data/{self.year}_SML.csv"
+        filepath = ICIO_TABLES_DIR / f"{self.year}_SML.csv"
         matrix = read_csv(filepath, index_col='V1')
-
-        # Add MultiIndex to rows and columns (country-activity)
+        
+        # Build  MultiIndex to rows  (country-activity)
         index = [i.split('_', 1) for i in matrix.index]
         matrix.index = MultiIndex.from_arrays(
             [
@@ -118,6 +145,7 @@ class ICIO_Network():
             ],
             names=['country', 'activity']
         )
+        # Build  MultiIndex to columns  (country-activity)
         columns = [i.split('_', 1) for i in matrix.columns]
         matrix.columns = MultiIndex.from_arrays(
             [
@@ -127,9 +155,10 @@ class ICIO_Network():
             names=['country', 'activity']
         )
 
-        # Extract value-added components 
+        # Identify final demand columns
         cols_activity = matrix.columns.get_level_values('activity')
         cols_final_demand = cols_activity.isin(final_demand_names + [nan])
+        # Extract value-added components
         self.__value_added = {"VA": matrix.loc["VA", None][~cols_final_demand],
                      "TLS": matrix.loc["TLS", None].drop(("OUT", nan)),
                      "OUT": matrix.loc["OUT", None][~cols_final_demand]
@@ -147,9 +176,10 @@ class ICIO_Network():
         for name, value in self.__final_demand.items():
             value.name = name
          
-        # Extract intermediate demand matrix
+        # Keep only intermediate demand columns
         matrix = matrix.loc[:, ~cols_final_demand]    
         
+        # Optionally remove Rest of the World
         if not RoW:
             idx = matrix.index.get_level_values(0) != "ROW"
             cols = matrix.columns.get_level_values(0) != "ROW"
@@ -157,7 +187,7 @@ class ICIO_Network():
 
         self.__intermediate_demand = matrix
            
-        # Calculate total output        
+        # Compute total output        
         self.__total_output = self.__value_added["OUT"].sum()
 
         return matrix
@@ -177,9 +207,11 @@ class ICIO_Network():
             Whether to normalize edge weights (as percentage of flow).
         by_output : bool
             If True, normalize using total output,
-            otherwise use total intermediate demand.
-        RoW : bool
-            Whether to include Rest of the World (ROW) in the graph.
+            otherwise using total intermediate demand.
+        diagonal : bool
+            Whether to keep country-activity self-links.
+        diagonal_country : bool
+            Whether to keep within-country blocks.
 
         Returns
         -------
@@ -191,22 +223,24 @@ class ICIO_Network():
         
         print(f'Creating ICIO network ({self.year})')
         
-        # Flatten and filter positive flows
+        # Stack the matrix into edge list form
         icio_stack = matrix.stack(level=[0, 1], future_stack=True)
         
+        # Remove within-country blocks if requested
         if not diagonal_country: 
             # Remove diagonal blocks by country 
             idx = icio_stack.index
             mask = idx.get_level_values(0) == idx.get_level_values(2)
             icio_stack.loc[mask] = 0
+        # Remove exact diagonal if requested
         elif not diagonal: 
-            # Remove diagonal 
             idx = icio_stack.index
             idx = icio_stack.index
             mask = (idx.get_level_values(0) == idx.get_level_values(2)) & \
                    (idx.get_level_values(1) == idx.get_level_values(3))
             icio_stack.loc[mask] = 0
-            
+        
+        # Normalize edge weights if requested
         if normalize:
             if by_output:
                 # Normalize using total output
@@ -217,17 +251,17 @@ class ICIO_Network():
             icio_stack = icio_stack * 100 / total
             
         # Filter positive flows
-        icio_stack = icio_stack[icio_stack>0]
+        icio_stack = icio_stack[icio_stack > 0]
+         
         
-        
-        # Create list of vertices and edges
+        # Create vertex and edge lists
         idxs = DataFrame(list(icio_stack.index))
         vs_from = list(idxs[0]+'_'+idxs[1])
         vs_to = list(idxs[2]+'_'+idxs[3])
         vertices = list(set(vs_from+vs_to))
         edges = zip(vs_from, vs_to)
         
-        # Build graph
+        # Build directed graph
         g = ig.Graph(directed=True)
         g.add_vertices(vertices)
         g.add_edges(edges)
@@ -242,8 +276,14 @@ class ICIO_Network():
         
         return g   
     
-    def __calculate_trade(self, trade_type, countries, activities, n):
-         
+    def __calculate_trade(self,
+                          trade_type,
+                          countries,
+                          activities,
+                          n):
+        """
+        Compute total flow for a given trade-type partition.
+        """
         row_country = repeat(countries.to_numpy()[:, newaxis], n, axis=1)
         row_activity = repeat(activities.to_numpy()[:, newaxis], n, axis=1)
         col_country = repeat(countries.to_numpy()[newaxis, :], n, axis=0)
@@ -261,14 +301,16 @@ class ICIO_Network():
         return self.__intermediate_demand.where(mask).sum().sum()
     
     def calculate_trade_types(self):
-    
+        """
+        Compute aggregate flows for the four trade-type categories.
+        """
         n = self.__intermediate_demand.shape[0]
         
         countries = self.matrix.index.get_level_values('country')
         activities = self.matrix.index.get_level_values('activity')
 
     
-        # Sumar flujos por tipo
+        # Sum flows by type
         trade_I   = self.__calculate_trade("I", countries, activities, n)
         trade_II  = self.__calculate_trade("II", countries, activities, n)
         trade_III = self.__calculate_trade("III", countries, activities, n)
@@ -289,7 +331,9 @@ class ICIO_Network():
         ----------
         path_save : str, optional
            Path where the HTML file will be saved.
-           If not, the map will be displeyed in the browser.
+           If not, the map will be displayed in the browser.
+        save_name : Path, optional
+            Output file or directory name.
         threshold : float
             Minimum edge weight to be visualized.
             Edges below this threshold are ignored.

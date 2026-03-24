@@ -1,3 +1,6 @@
+# ===========================================================
+# PACKAGES
+# ===========================================================
 import leidenalg as la
 from igraph import VertexClustering
 
@@ -5,7 +8,12 @@ from time import time
 from igraph import Graph
 
 
-def partition_initial(g: Graph, by: str) -> list[int]:
+# ===========================================================
+# FUNCTIONS
+# ===========================================================
+def partition_initial(
+        g: Graph,
+        by: str) -> list[int]:
     """
     Generate an initial node partition for community detection.
 
@@ -43,7 +51,11 @@ def partition_initial(g: Graph, by: str) -> list[int]:
         raise ValueError(f"Invalid partitioning method: '{by}'")
     return partition_init   
 
-def leiden_algorithm(g: Graph, initial_by: str = 'single', seed: int = 1, verbose=False):
+def leiden_algorithm(
+        g: Graph,
+        initial_by: str = 'single',
+        seed: int = 1,
+        verbose=False):
     """
     Run the Leiden community detection algorithm on a graph.
     
@@ -85,7 +97,11 @@ def leiden_algorithm(g: Graph, initial_by: str = 'single', seed: int = 1, verbos
         print(f"Leiden algorithm completed in {t_final:.2f} seconds.")
     return partition, t_final
 
-def louvian_algorithm(g: Graph, initial_by: str = 'single', seed: int = 1, verbose=False):
+def louvain_algorithm(
+        g: Graph,
+        initial_by: str = 'single',
+        seed: int = 1,
+        verbose=False):
     """
     Run the Louvain community detection algorithm on a graph.
     

@@ -1,26 +1,41 @@
+# ===========================================================
+# PACKAGES
+# ===========================================================
 from pandas import read_csv
 from pathlib import Path
 from numpy import log2
 from scipy.stats import entropy
 from sklearn.metrics.cluster import contingency_matrix
 
+# ===========================================================
+# VARIABLES
+# ===========================================================
+BASE_DIR = Path(__file__).parent / "codes"
 
-path_data = Path(__file__).parent
-
-aux = read_csv(path_data/"codes\\countries.csv", 
-                     encoding="latin-1",
-                     header=None,
-                     index_col = 0,
-                     names=["name", "longitude", "latitude"])
+# ===========================================================
+# COUNTRIES DATA
+# ===========================================================
+aux = read_csv(
+    BASE_DIR / "countries.csv", 
+    encoding="latin-1",
+    header=None,
+    index_col = 0,
+    names=["name", "longitude", "latitude"]
+    )
 countries =sorted( list(aux.index))
 countries_names = aux["name"].to_dict()
 countries_centers = aux[["longitude", "latitude"]].apply(tuple, axis=1).to_dict()
 
-aux = read_csv(path_data/"codes\\demand.csv", 
-               encoding="latin-1",
-               header=None,
-               index_col = 0,
-               names=["name"])
+# ===========================================================
+# ACTIVITIES DATA
+# ===========================================================
+aux = read_csv(
+    BASE_DIR / "demand.csv", 
+    encoding="latin-1",
+    header=None,
+    index_col = 0,
+    names=["name"]
+    )
 activities = list(aux.index)
 activities_names = aux["name"].to_dict()
 
@@ -28,6 +43,9 @@ value_added_names = ["TLS", "VA", "OUT"]
 final_demand_names = ['HFCE',  'NPISH',   'GGFC', 
                       'GFCF', 'INVNT',  'DPABR']
 
+# ===========================================================
+# FUNCTIONS
+# ===========================================================
 def variation_info(labels_1, labels_2):
     # Contingency matrix (n_ij)
     contingency = contingency_matrix(labels_1, labels_2)
