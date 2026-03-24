@@ -20,7 +20,8 @@ from .utils import (
     countries_names,
     countries_centers,
     activities,
-    activities_names
+    activities_names,
+    export_dictionary
 )
 
 __all__ = [
@@ -38,5 +39,6 @@ __all__ = [
     "countries_names",
     "countries_centers",
     "activities",
-    "activities_names"
+    "activities_names",
+    "export_dictionary"
 ]

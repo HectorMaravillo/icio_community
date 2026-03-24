@@ -1,6 +1,7 @@
 # ===========================================================
 # PACKAGES
 # ===========================================================
+from csv import writer
 from pandas import read_csv
 from pathlib import Path
 from numpy import sum as np_sum
@@ -47,6 +48,12 @@ final_demand_names = ['HFCE',  'NPISH',   'GGFC',
 # ===========================================================
 # FUNCTIONS
 # ===========================================================
+def export_dictionary(dictionary, file_path):
+    with open(file_path, 'a', newline = '') as datos:
+        almacenar = writer(datos)
+        almacenar.writerow(dictionary.values())
+
+
 def entropy(p):
     p = p[p > 0]
     return - np_sum(p * log2(p))
