@@ -16,5 +16,5 @@ logs/
 # ignore the .py.log files
 *.py.log
 
-
-
+# ignore the pickle files
+*.pkl
