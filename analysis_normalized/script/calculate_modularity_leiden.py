@@ -25,7 +25,7 @@ iterations = range(0, 30)
 labels = ["year", "algorithm", "initial", "seed", "modularity", "clusters","time"]
 
 # ===========================================================
-# VARIABLES
+# MAIN
 # ===========================================================
 
 file_path = SAVE_DIR / "Modularity_Leiden.csv"

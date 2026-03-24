@@ -10,15 +10,25 @@ if str(ROOT) not in sys.path:
 from icio_community import ICIO_Network
 from icio_community import export_dictionary
 
+
 # ===========================================================
-# MAIN
+# VARIABLES
 # ===========================================================
 
 SAVE_DIR = ROOT / "analysis_normalized" / "results" 
 
 years = range(1995, 2023)
-trade = {} 
+labels = ["year", "total", "trade_I", "trade_II", "trade_III","trade_IV"]
 
+# ===========================================================
+# MAIN
+# ===========================================================
+
+file_path = SAVE_DIR / "TradeTypes.csv"
+if not file_path.exists() or file_path.stat().st_size == 0:
+    export_dictionary(dict(enumerate(labels)), file_path)
+    
+trade = {} 
 for year in years:
     print(f"YEAR: {year}")
     icio = ICIO_Network(year,
@@ -35,4 +45,4 @@ for year in years:
     trade["trade_II"] = trade_values[1]
     trade["trade_III"] = trade_values[2]
     trade["trade_IV"] = trade_values[3]
-    export_dictionary(trade, SAVE_DIR / "TradeTypes")
+    export_dictionary(trade, SAVE_DIR / "TradeTypes.csv")
