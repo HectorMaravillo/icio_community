@@ -59,9 +59,9 @@ for year, row in best_results.iterrows():
     
     community_max = Communities(p, year)
     communities_df = community_max.select()
-    print("Saving communities ...")
-    communities_df.to_csv(COMMUNITIES_DIR /  f"{year}_communities.csv")
+#    print("Saving communities ...")
+#    communities_df.to_csv(COMMUNITIES_DIR /  f"{year}_communities.csv")
     print("Saving map ...")
-    community_max.draw_map(MAPS_DIR, save_name = "thr99", threshold=99)   
+    community_max.draw_map(MAPS_DIR, save_name = "thr99", pct_threshold=99, static = True)   
     
     del g, p, partition

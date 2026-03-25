@@ -149,7 +149,8 @@ class Communities(VertexClustering):
                  save_name: str = "communities",
                  select : list[int] = None,
                  pct_threshold: float = None,
-                 projection: str = 'natural earth') -> None:
+                 projection: str = 'natural earth',
+                 static : bool = False) -> None:
         draw_map(g = None,
                  year = None,
                  communities = self,
@@ -157,7 +158,8 @@ class Communities(VertexClustering):
                  path_save = path_save,
                  save_name = save_name,
                  pct_threshold = pct_threshold,
-                 projection = projection)
+                 projection = projection,
+                 static = static)
         
     def draw_subgraphs(self,
                        path_save = None,

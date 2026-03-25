@@ -311,7 +311,8 @@ def draw_map(g: Graph,
              path_save: str = None,
              save_name: str = "",
              pct_threshold: float = None,
-             projection: str = "natural earth") -> None:
+             projection: str = "natural earth",
+             static: bool = False) -> None:
     """
     Create and save an interactive map of the ICIO network.
 
@@ -467,7 +468,15 @@ def draw_map(g: Graph,
         pio.renderers.default = "browser"
         fig.show()
     else:
-       fig.write_html(path_save / f"{year}_{save_name}_{projection}.html", config=config)
+        if static:
+            fig.write_image(
+                path_save / f"{year}_{save_name}.png",
+                format = "png"
+                )
+        fig.write_html(
+            path_save / f"{year}_{save_name}.html",
+            config=config
+            )
 
 def draw_communities(communities,
                      df: DataFrame,
@@ -740,3 +749,4 @@ def draw_subgraph_network(communities, i,
        else: 
            save_name = str(communities.year) + "_" + save_name + "_net"
        fig.write_html(path_save / f"{save_name}.html")
+       

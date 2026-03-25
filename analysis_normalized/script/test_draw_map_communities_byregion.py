@@ -61,7 +61,7 @@ communities = community_max
 
 select = ["MMR", "LAO", "THA", "MYS", "IDN", "VNM"]
 communities_df = community_max.select(select)
-community_max.draw_map(select = select, pct_threshold=20)
+community_max.draw_map(path_save = BASE_DIR, select = select, pct_threshold=99)
 
 
 #community_max.draw_subgraphs()
