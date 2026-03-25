@@ -303,12 +303,14 @@ def draw_subgraph_map(subgraph: Graph,
     draw_nodes(subgraph, label, fig, color)
     return fig
 
+    
 def draw_map(g: Graph,
              year: int,
              communities = None,
+             select : list[str] = None,
              path_save: str = None,
              save_name: str = "",
-             threshold: float = None,
+             pct_threshold: float = None,
              projection: str = "natural earth") -> None:
     """
     Create and save an interactive map of the ICIO network.
@@ -322,7 +324,7 @@ def draw_map(g: Graph,
     path_save : str, optional
         Directory to save the resulting HTML file.
         If None, the map will open in browser.
-    threshold : float, optional
+    pct_threshold : float, optional
         Minimum edge weight to show..
     projection : {'natural earth', 'orthographic'}, optional
         Type of geographic projection to use:
@@ -335,12 +337,18 @@ def draw_map(g: Graph,
     """
     print('Creating the map...')
     fig = scatter_geo(projection=projection)
+
     if communities is not None:
-        year = communities.year
+        if select is not None:
+            h = communities.g.induced_subgraph(
+                communities.g.vs.select(country_in = select)
+                )
         # Use maximum edge weight across all communities for opacity normalization
         weights  = array(communities.g.es["weight"])
         weight_max = max(weights)
-        threshold = percentile(weights, threshold)
+        threshold = percentile(weights, pct_threshold)
+
+        year = communities.year
         # Get community labels and subgraphs
         labels = communities.labels()
         subgraphs = communities.subgraphs
@@ -355,14 +363,20 @@ def draw_map(g: Graph,
                 color = rgb2hex(colors[label])
             else:
                 color = "grey"
-            fig = draw_subgraph_map(
-                subgraph = subgraphs[i], 
-                label = label, 
-                fig = fig,
-                threshold = threshold,
-                weight_max = weight_max,
-                color=color
-            )
+            sub_g = subgraphs[i]
+            if select is not None:
+                sub_g = sub_g.induced_subgraph(
+                    sub_g.vs.select(country_in = select)
+                    )
+            if sub_g.vcount() > 0:
+                fig = draw_subgraph_map(
+                    subgraph = sub_g, 
+                    label = label, 
+                    fig = fig,
+                    threshold = threshold,
+                    weight_max = weight_max,
+                    color=color
+                )
         # Title and save name based on year in community object
         title = str(year)
         # Create list of visibility options for buttons
@@ -407,19 +421,26 @@ def draw_map(g: Graph,
         )
     else:
         # Draw full graph with single label
+        h = g.copy()
+        if select is not None:
+            h = h.induced_subgraph(
+                h.vs.select(country_in = select)
+                )
+        # Use maximum edge weight across all communities for opacity normalization
+        weights  = array(g.es["weight"])
+        weight_max = max(weights)
+        threshold = percentile(weights, pct_threshold)
         fig = draw_subgraph_map(
-            subgraph = g, 
+            subgraph = h, 
             label = None, 
             fig = fig,
             threshold = threshold,
-            weight_max = None,
-            c="gray"
+            weight_max = weight_max,
+            color="gray"
         )
         title = "ICIO: "+str(year)    
     # Update geographic layout parameters
-    fig.update_geos(lonaxis_range=None,
-                    lataxis_range=None,
-                    center=None)
+    fig.update_geos(fitbounds = "locations")
     
     # Add title to the layout
     fig.update_layout(
@@ -447,8 +468,6 @@ def draw_map(g: Graph,
         fig.show()
     else:
        fig.write_html(path_save / f"{year}_{save_name}_{projection}.html", config=config)
-       
-
 
 def draw_communities(communities,
                      df: DataFrame,

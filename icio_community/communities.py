@@ -11,7 +11,7 @@ from icio_community.utils import countries, activities
 from icio_community.draw import (
     draw_communities,
     draw_map,
-    draw_subgraph_network
+    draw_subgraph_network,
     )
 
 # ===========================================================
@@ -105,20 +105,20 @@ class Communities(VertexClustering):
     def local_modularity(self) -> dict[str, float]:
         if not hasattr(self, "_local_modularity"):
             self._local_modularity = {
-                i: (sum(subg_g.es["weight"], dtype=float) / self.W) -
-                   (sum(subg_g.vs["Out_Strength"], dtype=float) *
-                    sum(subg_g.vs["In_Strength"], dtype=float)) / (self.W**2)
+                i: (sum(subg_g.es["weight"], dtype = float) / self.W) -
+                   (sum(subg_g.vs["Out_Strength"], dtype = float) *
+                    sum(subg_g.vs["In_Strength"], dtype = float)) / (self.W ** 2)
                 for i, subg_g in zip(self.labels(), self.subgraphs)
             }
         return self._local_modularity
 
     
-    def select(self, countries_sel=[], activities_sel=[]):   
+    def select(self, countries_sel = [], activities_sel = []):   
         if activities_sel == []:
             activities_sel = activities
         if countries_sel == []: 
             countries_sel = countries
-        df = DataFrame(columns=activities_sel, index=countries_sel)
+        df = DataFrame(columns = activities_sel, index = countries_sel)
         labels = self.labels()
         memberships = self.p.membership
         for v in self.g.vs():
@@ -126,8 +126,8 @@ class Communities(VertexClustering):
             activity = v["activity"]
             if country in  countries_sel and  activity in  activities_sel:
                 df.loc[country, activity] = labels[memberships[v.index]]
-        df = df.dropna(how='all', axis=0) 
-        df = df.dropna(how='all', axis=1) 
+        df = df.dropna(how = 'all', axis = 0) 
+        df = df.dropna(how ='all', axis = 1) 
         return df    
     
     
@@ -143,31 +143,34 @@ class Communities(VertexClustering):
             select = self.select(countries_sel, activities_sel)
         draw_communities(self, select, path_save, save_name, **kwargs)
         
+        
     def draw_map(self, 
                  path_save: str = None,
                  save_name: str = "communities",
-                 threshold: float = None,
+                 select : list[int] = None,
+                 pct_threshold: float = None,
                  projection: str = 'natural earth') -> None:
         draw_map(g = None,
-                 year=None,
-                 communities=self,
-                 path_save=path_save,
-                 save_name=save_name,
-                 threshold=threshold,
-                 projection=projection)
+                 year = None,
+                 communities = self,
+                 select = select,
+                 path_save = path_save,
+                 save_name = save_name,
+                 pct_threshold = pct_threshold,
+                 projection = projection)
         
     def draw_subgraphs(self,
-                       path_save=None,
-                       strength="out",
+                       path_save = None,
+                       strength = "out",
                        by = "country",
                        percentil = 99,
-                       niter=50):
+                       niter = 50):
         labels = self.labels()
         for i in range(self.n_subgraphs):
             draw_subgraph_network(self, i,
-                                  path_save=path_save,
-                                  save_name=str(labels[i]), 
-                                  strength=strength, 
+                                  path_save = path_save,
+                                  save_name = str(labels[i]), 
+                                  strength = strength, 
                                   by = by,
                                   percentil = percentil,
-                                  niter=niter)
+                                  niter = niter)
