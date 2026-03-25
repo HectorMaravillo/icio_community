@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mapas 1995–2022</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    h1 {
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin-top: 0;
+      color: #555;
+    }
+
+    ul {
+      columns: 3;
+      -webkit-columns: 3;
+      -moz-columns: 3;
+      list-style: none;
+      padding: 0;
+      margin-top: 24px;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: #0366d6;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mapas 1995–2022</h1>
+  <p>Selecciona un año para abrir el mapa correspondiente.</p>
+
+  <ul id="map-list"></ul>
+
+  <script>
+    const list = document.getElementById("map-list");
+
+    for (let year = 1995; year <= 2022; year++) {
+      const filename = `${year}_thr99_natural earth.html`;
+
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+
+      a.href = `maps/${filename}`;
+      a.textContent = year;
+      a.target = "_blank";
+
+      li.appendChild(a);
+      list.appendChild(li);
+    }
+  </script>
+</body>
+</html>
