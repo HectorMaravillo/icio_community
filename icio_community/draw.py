@@ -446,7 +446,7 @@ def draw_map(g: Graph,
         pio.renderers.default = "browser"
         fig.show()
     else:
-       fig.write_html(path_save+f"{year}_"+save_name+'_'+projection+'.html', config=config)
+       fig.write_html(path_save / f"{year}_{save_name}_{projection}.html", config=config)
        
 
 
@@ -720,4 +720,4 @@ def draw_subgraph_network(communities, i,
            save_name = str(communities.year) + f"_C{str(i)}_net"
        else: 
            save_name = str(communities.year) + "_" + save_name + "_net"
-       fig.write_html(path_save+save_name+'.html')
+       fig.write_html(path_save / f"{save_name}.html")

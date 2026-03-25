@@ -7,7 +7,6 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 from matplotlib.patches import Patch
 from matplotlib.ticker import FuncFormatter
-from matplotlib.ticker import MultipleLocator
 
 # ===========================================================
 # CONFIG CONSTANTS
@@ -17,7 +16,7 @@ from matplotlib.ticker import MultipleLocator
 # Paths
 BASE_DIR = Path(__file__).resolve().parents[1]
 RESULTS_DIR = BASE_DIR / "results"
-IMAGES_DIR = BASE_DIR / "images"
+IMAGES_DIR = BASE_DIR / "images" / "type"
 NAME_FILE = "TradeTypes"
 
 NAME_SAVE_LINEGRAPH = "TipoComercio.png"
