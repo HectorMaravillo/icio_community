@@ -351,7 +351,7 @@ def draw_map(g: Graph,
 
         year = communities.year
         # Get community labels and subgraphs
-        labels = communities.labels()
+        labels = communities.labels
         subgraphs = communities.subgraphs
         if set(labels).issubset(set(countries)):
             colors = create_colors()

@@ -41,6 +41,10 @@ class Communities(VertexClustering):
     @property
     def W(self) -> float:
         return self.__W
+    
+    @property
+    def membership(self) -> list[int]:
+        return self.p.membership
 
     def __init__(self, partition: VertexClustering, year: int):
         """
@@ -57,6 +61,7 @@ class Communities(VertexClustering):
         self.g = partition.graph.copy()
         self.g.vs['cluster'] = partition.membership # revisar hacer initial_partition  VertexClustering
         self.year = year
+        self.__labels = None
         self.__W = float(sum(self.g.es["weight"]))
         self.subgraphs = self.p.subgraphs()
         
@@ -79,6 +84,7 @@ class Communities(VertexClustering):
             strongest.append((max_in, max_out))
         return strongest
     
+    @property
     def labels(self) -> list[str]:
         """
         Generate unique labels (country code) for each community 
@@ -94,12 +100,31 @@ class Communities(VertexClustering):
         ValueError
             If any label is repeated.
         """
-        strongest = self.strongest()
-        labels = [i[1].split("_")[0] for i in strongest]
-        if len(labels) != len(set(labels)):
-            warnings.warn('ERROR: Duplicate community labels', UserWarning)
-            return list(range(len(labels)))
-        return labels
+        if self.__labels is None:
+            strongest = self.strongest()
+            labels = [i[1].split("_")[0] for i in strongest]
+            if len(labels) != len(set(labels)):
+                warnings.warn('ERROR: Duplicate community labels', UserWarning)
+                return list(range(len(labels)))
+            self.__labels = labels
+        return self.__labels 
+    
+    @property
+    def membership_labels(self) -> list[str]:
+        labels = self.labels
+        return [labels[i] for i in self.membership]
+    
+    @property
+    def node_countries(self) -> list[str]:
+        return self.g.vs["country"]
+    
+    @property
+    def node_activities(self) -> list[str]:
+        return self.g.vs["activity"]
+    
+    @property
+    def node_names(self) -> list[str]:
+        return self.g.vs["name"]
     
     @property
     def local_modularity(self) -> dict[str, float]:
