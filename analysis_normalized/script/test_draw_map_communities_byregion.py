@@ -15,7 +15,7 @@ if str(ROOT) not in sys.path:
     
 from icio_community import leiden_algorithm
 from icio_community import Communities
-#from icio_community import draw_map_test
+
 
 # ===========================================================
 # CONFIGURATION

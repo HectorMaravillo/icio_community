@@ -469,10 +469,14 @@ def draw_map(g: Graph,
         fig.show()
     else:
         if static:
-            fig.write_image(
-                path_save / f"{year}_{save_name}.png",
-                format = "png"
-                )
+            try:
+                fig.write_image(
+                    path_save / f"{year}_{save_name}.png",
+                    format = "png",
+                    width=600, height=400, scale=1
+                    )
+            except Exception as e:
+                    print(f"Failed to save image: {e}")
         fig.write_html(
             path_save / f"{year}_{save_name}.html",
             config=config
