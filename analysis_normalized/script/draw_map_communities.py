@@ -23,7 +23,7 @@ from icio_community import Communities
 BASE_DIR = ROOT / "analysis_normalized"
 RESULTS_DIR = BASE_DIR / "results"
 NETWORKS_DIR = BASE_DIR / "networks"
-COMMUNITIES_DIR = BASE_DIR / "communities"
+COMMUNITIES_DIR =  RESULTS_DIR / "communities"
 MAPS_DIR = BASE_DIR / "maps" 
 
 

@@ -22,13 +22,41 @@ from icio_community.utils import (
     activities_names
     )
 
+selected_countries = [
+    'AGO', 'ARE', 'ARG',
+    'AUS', 'AUT',
+    'BGD', 'BRA',
+    'BRN', 'CAN',
+    'CHE', 'CHL',
+    'CHN', 'CMR',
+    'COL', 'CRI',
+    'DEU', 'EGY',
+    'ESP', 'FRA',
+    'GBR', 'GRC',
+    'HKG', 'HRV',
+    'IDN', 'IND',
+    'ISR', 'ITA',
+    'JPN', 'KOR',
+    'MAR', 'MEX',
+    'MLT', 'MMR',
+    'NGA', 'NLD',
+    'NZL', 'PAK',
+    'PER', 'PHL',
+    'POL', 'ROU',
+    'RUS', 'SAU',
+    'SGP', 'STP',
+    'SWE', 'THA',
+    'TUR', 'TWN',
+    'USA', 'ZAF']
 
 def create_colors(by = "country", n = 100):
     if by == "country":
-        palette = color_palette("tab20", 20)
-        palette += color_palette("pastel", 20) 
-        palette += color_palette("bright", 20)
-        palette += color_palette("deep", 21)
+    #    palette = color_palette("tab20", 20)
+    #    palette += color_palette("pastel", 20) 
+    #    palette += color_palette("bright", 20)
+    #    palette += color_palette("deep", 21)
+    #    colors = dict(zip(countries, palette))
+        palette = color_palette("husl", 81)
         colors = dict(zip(countries, palette))
     elif by == "activity":
         palette = color_palette("tab20", 17)
