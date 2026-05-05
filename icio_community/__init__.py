@@ -13,7 +13,8 @@ from .draw import (
     draw_subgraph_map,
     draw_map,
     draw_communities,
-    draw_subgraph_network
+    draw_subgraph_network,
+    create_colors
 )
 from .utils import (
     countries,
@@ -40,5 +41,6 @@ __all__ = [
     "countries_centers",
     "activities",
     "activities_names",
-    "export_dictionary"
+    "export_dictionary",
+    "create_colors"
 ]
