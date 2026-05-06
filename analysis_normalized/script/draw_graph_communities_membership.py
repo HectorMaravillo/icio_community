@@ -97,7 +97,7 @@ for file in COMMUNITIES_DIR.glob("*.csv"):
 membership_by_year = pd.concat(aux, axis=1)
 membership_by_year.index.names = ["country", "activity"]
 membership_by_year.columns.name = "year"
-
+#%%%
 
 # ===========================================================
 # DRAW  GRAPH
