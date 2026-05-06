@@ -88,7 +88,7 @@ def sankey_membership_by_year(
         + " | "
         + long["activity"].astype(str)
     )
-    long["activity"] = long["activity"].map(activities_names)
+    long["activity"] = long["activity"].map(activities_names) + " (" +  long["activity"] + ")"
 
     # Nodos: país inicial + grupo por año
     node_labels = []
@@ -143,7 +143,6 @@ def sankey_membership_by_year(
             ]
         ]
     )
-    #links["country"] = links["country"].map(countries_names)
         
     # Saltos entre años consecutivos
     wide = (
@@ -230,6 +229,7 @@ def sankey_membership_by_year(
                     line=dict(width=0.5),
                     label=node_labels,
                     color=node_colors,
+                    hovertemplate="%{label}<extra></extra>"
                 ),
                 link=dict(
                     source=links["source"],
