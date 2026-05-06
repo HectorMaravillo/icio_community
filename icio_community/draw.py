@@ -10,7 +10,8 @@ from plotly.express import scatter_geo
 from igraph import Graph
 from matplotlib.colors import rgb2hex
 from matplotlib.patches import Patch
-from seaborn import color_palette, heatmap
+from seaborn import heatmap
+from glasbey import create_palette
 from numpy import array, pi, dot, sqrt, nan, percentile
 
 from icio_community.utils import ( 
@@ -22,49 +23,17 @@ from icio_community.utils import (
     activities_names
     )
 
-selected_countries = [
-    'AGO', 'ARE', 'ARG',
-    'AUS', 'AUT',
-    'BGD', 'BRA',
-    'BRN', 'CAN',
-    'CHE', 'CHL',
-    'CHN', 'CMR',
-    'COL', 'CRI',
-    'DEU', 'EGY',
-    'ESP', 'FRA',
-    'GBR', 'GRC',
-    'HKG', 'HRV',
-    'IDN', 'IND',
-    'ISR', 'ITA',
-    'JPN', 'KOR',
-    'MAR', 'MEX',
-    'MLT', 'MMR',
-    'NGA', 'NLD',
-    'NZL', 'PAK',
-    'PER', 'PHL',
-    'POL', 'ROU',
-    'RUS', 'SAU',
-    'SGP', 'STP',
-    'SWE', 'THA',
-    'TUR', 'TWN',
-    'USA', 'ZAF']
-
 def create_colors(by = "country", n = 100):
     if by == "country":
-    #    palette = color_palette("tab20", 20)
-    #    palette += color_palette("pastel", 20) 
-    #    palette += color_palette("bright", 20)
-    #    palette += color_palette("deep", 21)
-    #    colors = dict(zip(countries, palette))
-        palette = color_palette("husl", 81)
+        n = len(countries)
+        palette = create_palette(palette_size=n, as_hex=False)
         colors = dict(zip(countries, palette))
     elif by == "activity":
-        palette = color_palette("tab20", 17)
-        palette += color_palette("bright", 17)
-        palette += color_palette("deep", 16)
+        n = len(activities)
+        palette = create_palette(palette_size=n, as_hex=False)
         colors = dict(zip(activities, palette))
     else:
-        palette = color_palette("tab20", n)
+        palette = create_palette(palette_size=n, as_hex=False)
         colors = dict(zip(range(n), palette))  
     return colors
 
@@ -643,7 +612,7 @@ def draw_communities(communities,
         plt.close()
     else:
         save_name = str(communities.year) + f"_{save_name}.png"
-        fig.savefig(path_save+save_name, dpi=200, bbox_inches='tight')
+        fig.savefig(path_save / save_name, dpi=200, bbox_inches='tight')
         plt.close()
 
 

@@ -133,7 +133,7 @@ class Communities(VertexClustering):
                 i: (sum(subg_g.es["weight"], dtype = float) / self.W) -
                    (sum(subg_g.vs["Out_Strength"], dtype = float) *
                     sum(subg_g.vs["In_Strength"], dtype = float)) / (self.W ** 2)
-                for i, subg_g in zip(self.labels(), self.subgraphs)
+                for i, subg_g in zip(self.labels, self.subgraphs)
             }
         return self._local_modularity
 
@@ -144,7 +144,7 @@ class Communities(VertexClustering):
         if countries_sel == []: 
             countries_sel = countries
         df = DataFrame(columns = activities_sel, index = countries_sel)
-        labels = self.labels()
+        labels = self.labels
         memberships = self.p.membership
         for v in self.g.vs():
             country = v["country"]
@@ -192,7 +192,7 @@ class Communities(VertexClustering):
                        by = "country",
                        percentil = 99,
                        niter = 50):
-        labels = self.labels()
+        labels = self.labels
         for i in range(self.n_subgraphs):
             draw_subgraph_network(self, i,
                                   path_save = path_save,

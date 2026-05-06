@@ -2,10 +2,11 @@
 # PACKAGES
 # ===========================================================
 import sys
+import textwrap
 import pandas as pd
 import matplotlib.pyplot as plt
-from matplotlib.ticker import MultipleLocator
 
+from matplotlib.ticker import MultipleLocator
 from numpy import ceil
 from pathlib import Path
 
@@ -86,7 +87,8 @@ def format_axis(ax, x_ticks, x_ticks_minor):
 # Read and stack communities dataframe
 aux = []
 for file in COMMUNITIES_DIR.glob("*.csv"):
-    df = pd.read_csv(file, index_col=0) 
+    df = pd.read_csv(file, 
+                     header = 0, index_col=0) 
     stack = df.stack(future_stack=True)
     stack.name = int(file.stem[:4])
     aux.append(stack)
@@ -175,10 +177,13 @@ def draw_community_membership(community, threshold=10):
         )
     # Add footnote with grouped countries
     if len(small_contributors) > 0:
+        text = "Otros incluye: " + ", ".join(small_contributors)
+        text = textwrap.fill(text, width=80)
         fig.text(
-            0.9, 0.01,  # position (centered below figure)
-            "Otros incluye: " + ", ".join(small_contributors),
+            0.88, -0.01,  # position (centered below figure)
+            text,
             ha='right',
+            va='bottom',
             fontsize=FONTSIZE_FOOTNOTE
         )
     # Apply custom axis formatting
@@ -197,15 +202,13 @@ def draw_community_membership(community, threshold=10):
     # Set axis labels
     ax.set_xlabel(xlabel, fontsize=FONTSIZE_LABELS)
     ax.set_ylabel(ylabel, fontsize=FONTSIZE_LABELS)
-    plt.savefig(IMAGES_DIR / f"{community}.png", dpi=DPI)
+    plt.savefig(IMAGES_DIR / f"{community}.png",
+                dpi=DPI,
+                bbox_inches="tight")
     plt.show()
-    
 
 communities = membership_by_year.stack().unique()
 for community in communities:
     if pd.notna(community):
         print(community)
         draw_community_membership(community, threshold=25)
-
-
-l = [c for c in communities if pd.notna(c)]

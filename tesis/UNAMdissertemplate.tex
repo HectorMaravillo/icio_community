@@ -1,0 +1,176 @@
+\documentclass[letterpaper,12pt,oneside]{book}
+\usepackage[top=25mm, left=30mm, right=25mm, bottom=25mm]{geometry}
+\usepackage{bachelorstitlepageUNAM}
+\usepackage{fontspec}
+\usepackage[spanish,es-nodecimaldot,es-tabla]{babel}
+\usepackage{setspace}
+\usepackage{amsfonts} % Fuentes para uso matemático
+\usepackage{amssymb}
+\usepackage{amsthm} % Proporciona una versión mejorada del comando \newtheorem 
+\usepackage{yhmath} % Simbolo de arco
+\usepackage{amsmath} % Simbolos matemáticos
+\usepackage{float} % Interfaz para definir objetos flotantes
+\usepackage{graphicx} % Amplia el paquete "graphics"
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\usepackage{mathrsfs}
+\usepackage{moreverb, url}
+\usepackage{multirow}
+\usepackage[colorlinks,bookmarksopen,bookmarksnumbered,citecolor=red,urlcolor=red]{hyperref}
+\usepackage{comment}
+\usepackage{enumerate}
+\usepackage[titletoc]{appendix}
+
+% Librerías para manejo de tablas
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{array} 
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{threeparttable} % Tablas con pie de pagina
+
+\usepackage{enumitem} % Enumeracion con letra
+
+\graphicspath{
+	{../analysis_normalized/images/}
+}
+
+% Bibliografía APA (biblatex)
+\usepackage[
+	backend=biber,
+	style=apa,
+	sortcites=true,
+	uniquename=false
+]{biblatex}
+% Para que biblatex-apa use términos en español (ed., pp., etc.)
+\DeclareLanguageMapping{spanish}{spanish-apa}
+% Archivo .bib
+\addbibresource{references.bib}
+
+
+\newtheorem{teor}{Teorema}
+\newtheorem{lema}{Lema}
+\newtheorem{cor}{Corolario}
+\newtheorem{nota}{Nota}
+\newtheorem{prop}{Proposición}
+\newtheorem{definicion}{Definición}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\begin{document}
+	%------------------------------
+%	\begin{titlepage}
+%		\thispagestyle{empty}
+%		\begin{minipage}[c][0.17\textheight][c]{0.25\textwidth}
+%			\begin{center}
+%				\includegraphics[width=3.5cm, height=3.5cm]{Escudo-UNAM.pdf}
+%			\end{center}
+%		\end{minipage}
+%		\begin{minipage}[c][0.195\textheight][t]{0.75\textwidth}
+%			\begin{center}
+%				\vspace{0.3cm}
+%				\textsc{\large Universidad Nacional Aut\'onoma de M\'exico}\\[0.5cm]
+%				\vspace{0.3cm}
+%				\hrule height2.5pt
+%				\vspace{.2cm}
+%				\hrule height1pt
+%				\vspace{.8cm}
+%				\textsc{Instituto de Matemáticas, Unidad Cuernavaca}\\[0.5cm] %
+%			\end{center}
+%		\end{minipage}
+		
+%		\begin{minipage}[c][0.81\textheight][t]{0.25\textwidth}
+%			\vspace*{5mm}
+%			\begin{center}
+%				\hskip2.0mm
+%				\vrule width1pt height13cm 
+%				\vspace{5mm}
+%				\hskip2pt
+%				\vrule width2.5pt height13cm
+%				\hskip2mm
+%				\vrule width1pt height13cm \\
+%				\vspace{5mm}
+%				\includegraphics[height=4.0cm]{IMATE_Cuer.jpg}
+%			\end{center}
+%		\end{minipage}
+%		\begin{minipage}[c][0.81\textheight][t]{0.75\textwidth}
+%			\begin{center}
+%				\vspace{1cm}
+%				
+%				{\large\scshape Modelación matemática de los asentamientos humanos en México.}\\[.2in]
+%				
+%				\vspace{2cm}            
+%				
+%				\textsc{\LARGE T\hspace{1.5cm}E\hspace{1.5cm}S\hspace{1.5cm}I\hspace{1.5cm}S}\\[0.5cm]
+%				\textsc{\large que para obtener el t\'itulo de:}\\[0.5cm]
+%				\textsc{\large Doctorado en Ciencias Matemáticas}\\[0.5cm]
+%				\textsc{\large presenta:}\\[0.5cm]
+%				\textsc{\large {Héctor Saib Maravillo Gómez}}\\[2cm]          
+				
+%				\vspace{0.5cm}
+%				
+%				{\large\scshape Comité Tutor:\\[0.3cm] {Dr. Gilberto Calvillo Vives \\ 
+%						Dr. Erick Treviño Aguilar\\
+%						Dr. Federico Alonso Pecina}}\\[.2in]
+%				
+%				\vspace{0.5cm}
+				
+%				\large{Ciudad de México,}{ }{2024}
+%			\end{center}
+%		\end{minipage}
+%	\end{titlepage}
+	
+	
+	
+	%---------------------------------
+	\frontmatter
+%	\maketitle
+	
+	\chapter*{}
+	\begin{flushright}
+	%	\textit{A Sofía que fue mi mayor impulso y alegría durante el doctorado.}\\
+			\vspace{10mm}
+	%	\textit{A Ma. Amelia quien me enseñó a superar todas las adversidades.}\\
+			\vspace{10mm}
+	%	\textit{Al Dr. David Romero Vargas que confió en mí\\ y  siempre supo transmitir su gusto por las matemáticas y por la vida.}
+	\end{flushright}
+	
+    %\include{agradecimientos}
+	
+	\tableofcontents
+	\listoffigures
+	
+	%\include{resumen}
+	%\include{abstract}
+	\graphicspath{ {Imagenes/} }
+	\include{Intro}
+
+	
+	\mainmatter
+	
+
+	\include{Cap1}
+	\include{Cap2}
+	\include{Cap3}
+	\include{Cap4}
+	
+	\appendix
+	\begin{appendices}
+	\include{A1}
+	\include{A2}
+	{
+		\graphicspath{
+			{../analysis_normalized/images/communities/}
+		}
+		\include{A3}
+	}
+	\end{appendices}
+	
+    \printbibliography[heading=bibintoc, title={Referencias bibliográficas}]
+	\backmatter
+	
+	
+\end{document}
