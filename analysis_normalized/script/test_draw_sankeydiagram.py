@@ -22,7 +22,7 @@ countries_names["RUS"] = "Rusia"
 countries_names["STP"] = "Saõ Tomé\nand Príncipe"
 
 COUNTRY_GROUPS = {
-    "asean": ["IDN","MYS","PHL","SGP","THA","VNM","KHM","LAO","MMR","BRN", "TWN","HKG"],
+    "asean": ["IDN","MYS","PHL","SGP","THA","VNM","KHM","LAO","MMR","BRN", "TWN"],
     "asia": ["CHN","HKG","VNM","KHM", "MYS","PHL","SGP","THA","LAO", "TWN","IDN", "BRN","MMR",
              "BGD","PAK","JPN","KOR","SAU", "ARE", "IND"],
     "north_america": ["CAN", "USA","MEX"],
@@ -33,7 +33,7 @@ COUNTRY_GROUPS = {
         "ROU"
         ],
     "rusia": ["BGR", "TUR", "GRC", "CYP", "KAZ", "BLR",  "RUS", "UKR", "LTU", "LVA"],
-    "baltic": ["DNK", "FIN", "NOR", "SWE", "ISL","EST",  "LTU", "LVA",  "NLD", "BEL", "IRL", "GBR", "MLT", "ITA"],
+    "baltic": ["DNK", "FIN", "NOR", "SWE", "ISL","EST",  "LTU", "LVA"],
     "france": ["MAR", "FRA", "TUN", "ESP", "PRT"]
 }
 
@@ -45,7 +45,7 @@ COUNTRY_GROUPS = {
 # Paths
 BASE_DIR = ROOT / "analysis_normalized"
 COMMUNITIES_DIR = BASE_DIR / "results" / "communities"
-IMAGES_DIR = BASE_DIR / "images" / "sankey_diagrams"
+SAVE_DIR = BASE_DIR / "sankey_diagrams"
 
 LINK_WIDTH = 0.1
 
@@ -74,7 +74,6 @@ colors = {
     for k, v in colors.items()
 }
 
-#%%%
 import pandas as pd
 import plotly.graph_objects as go
 
@@ -94,8 +93,16 @@ def hex_to_rgba(hex_color, alpha=0.15):
 def sankey_membership_by_year(
         df,
         years = None,
-        title="Membership by year"
+        save = False,
+        path_save = None,
+        save_name = None,
     ):
+    if save:
+        if path_save is None or save_name is None:
+            raise ValueError("Falta ruta o nombre para guardar imágenes")
+    
+    
+    
     if years is None:
         years = list(df.columns)
 
@@ -323,11 +330,23 @@ def sankey_membership_by_year(
             y=1.08,
             xref="paper",
             yref="paper",
-            text=str(year),
+            text=f"<b>{str(year).upper()}</b>",
             showarrow=False,
             font=dict(size=14)
         )
-    return fig
+    if save:
+        # Plotly config for output behavio
+        config = {'scrollZoom': True, 
+                  'responsive': False,
+                  'displayModeBar': True,
+                  'modeBarButtonsToRemove': ['select2d', 'lasso2d']}
+        print("Saving ... ", save_name)
+        fig.write_html(
+            path_save / f"{save_name}.html",
+            config=config
+            )
+    else:
+        fig.show()
 
 
 
@@ -336,26 +355,22 @@ def sankey_membership_by_year(
 years = (1995, 2000, 2005, 2010, 2015, 2020, 2022)
 countries_sel = COUNTRY_GROUPS["baltic"]
 df = membership_by_year.loc[countries_sel]
-fig = sankey_membership_by_year(df, years)
-fig.show()
+sankey_membership_by_year(
+    df,
+    years,
+    True,
+    SAVE_DIR,
+    "baltic")
+
 
 #%%
 for name, values in COUNTRY_GROUPS.items():
     countries_sel = values
-    if countries_sel is not None:
-        df = membership_by_year.loc[countries_sel]
-    else:
-        df = membership_by_year
-
-    #years = tuple(range(1995, 2023, 5))
-    fig = sankey_membership_by_year(df, years)
-    try:
-        print("Saving ... ", name)
-        fig.write_image(
-            IMAGES_DIR / f"{name}.png",
-            format = "png",
-            width=1200, height=400, scale=1
-            )
-    except Exception as e:
-            print(f"Failed to save image: {e}")
-    #fig.show()
+    df = membership_by_year.loc[countries_sel]
+    sankey_membership_by_year(
+        df,
+        years,
+        True,
+        SAVE_DIR,
+        name)
+    
