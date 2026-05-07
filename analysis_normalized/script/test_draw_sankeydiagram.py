@@ -45,6 +45,7 @@ COUNTRY_GROUPS = {
 # Paths
 BASE_DIR = ROOT / "analysis_normalized"
 COMMUNITIES_DIR = BASE_DIR / "results" / "communities"
+IMAGES_DIR = BASE_DIR / "images" / "sankey_diagrams"
 
 LINK_WIDTH = 0.1
 
@@ -133,7 +134,7 @@ def sankey_membership_by_year(
     # Nodos iniciales: países
     for country in sorted(long["country"].unique()):
         node_keys.append(("country", country))
-        node_labels.append(countries_names[country])
+        node_labels.append(countries_names[country]+f" ({country})")
         node_colors.append(colors[country])
     
     # Nodos por cada año y grupo
@@ -348,4 +349,13 @@ for name, values in COUNTRY_GROUPS.items():
 
     #years = tuple(range(1995, 2023, 5))
     fig = sankey_membership_by_year(df, years)
-    fig.show()
+    try:
+        print("Saving ... ", name)
+        fig.write_image(
+            IMAGES_DIR / f"{name}.png",
+            format = "png",
+            width=1200, height=400, scale=1
+            )
+    except Exception as e:
+            print(f"Failed to save image: {e}")
+    #fig.show()
