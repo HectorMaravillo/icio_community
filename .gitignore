@@ -4,6 +4,9 @@
 # Ignore the vscode folder
 .vscode/
 
+# Ignore the map folder
+analysis_normalized/maps/
+
 # ignore the logs folder
 logs/
 
@@ -18,3 +21,6 @@ logs/
 
 # ignore the pickle files
 *.pkl
+
+# ignore the geopackage files
+*.gpkg
