@@ -33,7 +33,8 @@ COUNTRY_GROUPS = {
         "ROU"
         ],
     "rusia": ["BGR", "TUR", "GRC", "CYP", "KAZ", "BLR",  "RUS", "UKR", "LTU", "LVA"],
-    "baltic": ["DNK", "FIN", "NOR", "SWE", "ISL","EST",  "LTU", "LVA",  "NLD", "BEL", "IRL", "GBR",]
+    "baltic": ["DNK", "FIN", "NOR", "SWE", "ISL","EST",  "LTU", "LVA",  "NLD", "BEL", "IRL", "GBR", "MLT", "ITA"],
+    "france": ["MAR", "FRA", "TUN", "ESP", "PRT"]
 }
 
 
