@@ -25,7 +25,7 @@ countries_names["TWN"] = "Taiwan"
 countries_names["USA"] = "USA"
 countries_names["RUS"] = "Rusia"
 countries_names["STP"] = "Saõ Tomé\nand Príncipe"
-
+countries_names["UAE"] = "Emiratos Árabes\nUnidos"
 
 # ===========================================================
 # CONFIGURATION
