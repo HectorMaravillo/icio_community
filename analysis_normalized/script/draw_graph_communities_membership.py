@@ -107,7 +107,6 @@ years = membership_by_year.columns
 x_ticks = range(years[0], years[-1], 5)
 x_ticks_minor = range(years[0], years[-1])
 xlabel = "Año" # "Year"
-ylabel = "Número de nodos"
 
 
 def draw_community_membership(community, threshold=10):
@@ -194,8 +193,11 @@ def draw_community_membership(community, threshold=10):
     ax.set_xticklabels(years[::5], rotation=0)
     
     if max_tot < 150:
-        y_lim = (0, max_tot+55)
+        y_lim = (0, 171)
         ax.set_ylim(y_lim)
+        ylabel = "Cantidad de\nvértices"
+    else:
+        ylabel = "Cantidad de vértices"
     ax.yaxis.set_major_locator(MultipleLocator(50))
     ax.yaxis.set_minor_locator(MultipleLocator(10))
     
