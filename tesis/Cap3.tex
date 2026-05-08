@@ -108,11 +108,11 @@ En cuanto al tiempo de ejecución, el algoritmo de Leiden tiene un comportamient
 Como ejercicio de validación de la modularidad se calculó su valor para las tres particiones iniciales consideradas en el análisis en cada año. La modularidad de la partición donde cada país es su propia comunidad se encuentra siempre por debajo de los valores obtenidos por los algoritmos de Leiden y Louvain, como se observa en la tabla \ref{Resultados_ModularidadClústeres}. En promedio,  la modularidad de las particiones por país es 0.71\% menor a la obtenida por el algoritmo de Leiden. Esto significa que, de forma global, los bloques comerciales detectados tienen mejor interacción, que considerar la economía dividida simplemente por fronteras nacionales. En contraste, la modularidad de la partición por sector y por vértices individuales (país-sector) tienen valores muy bajos cercanos a 0 (en promedio .185 en ambos casos). Esto implica que la densidad de enlaces dentro de estas divisiones es indistinguible de la densidad que tendría una partición aleatoria de los vértices, validando la capacidad de la modularidad para identificar estructuras artificiales. \textcolor{blue}{[Falta calcular la modularidad de una partición por grandes grupos de sectores económicos, equivalentes a las letras del ISIC-4: A (agropecuario), B(extraccion minera), C(industria), D (electicidad, gas), E agua, F Construccion, G (Comercio), H (transporte), I (alojamiento y comida), J (editorial, radifufson telecomunicaciones, tecnología e información), K (financieras), L (inmobiliarias), M (profesionales), N (adm), O, (publica), P (educacion), Q (salud), R (artes), S(otros), T (domesticos.)]}
 
 \graphicspath{
-	{../analysis_normalized/images/}
+	{../analysis_normalized/}
 }
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1.1\linewidth]{ComunidadesPorPais.png}
+	\includegraphics[width=1.1\linewidth]{images/ComunidadesPorPais.png}
 	\caption{\textcolor{blue}{La gráfica muestra a que bloque está integrado la mayoría de la economía de un país. Esto es a que bloque pertenece el 50\%+1 de los sectores de un país. Puede verse cuando dos bloques se unifican. Por ejemplo a partir de 2000, los paies de Europa central y alemania forman un bloque. También se ve cuando un país deja de estar dentro de un bloque por ejemplo, Lituania, letonia y polonia dejan de estar en el bloque de rusia a partir de 2015.}}
 \end{figure}
 
@@ -123,21 +123,44 @@ Como ejercicio de validación de la modularidad se calculó su valor para las tr
 
 \subsection{ASEAN}
 
+ Asociación de Naciones del Sudeste Asiático (ASEAN, \textit{Association of Southeast Asian Nations}) se estableció en agosto de 1967, a mitad de la guerra de Vietnam, por 5 países: Malasia, Indonesia, Filipinas, Singapur y Tailandia. Objetivos abarcaban cooperacion en sectores económico, social, cultural técnico t educativo, promocion de la pas y la estabilidad regionales. \url{https://asean.org/the-founding-of-asean/} Los siguientes ingresos fueron Brunei Darussalam (enero 1984), Vietnam (julio 1995), Laos y Myanmar (julio 1997), Cambodia (abril 1999) y Timor Oriental (octubre 2025).
+ 
+ Objetivos y propositos: "acelerar el crecimiento economico, el progreso social y el desarrollo cultural en la región"; "promover la paz y la estabilidad regionales", "Prestar asistencia mutua en forma de instalaciones de formacion e investigacion en los ambitos educativo, profesional, tecnico u administrativo", "Colaborar de manera más efectiva para fomentar un mayor crecimiento en los sectores de la agricultura y la industria, y el comercio. Esto incluye mejorar las instalaciones de transporte y comunicaciones y realizar estudios sobre el comercio internacional de productos básicos " \url{https://asean.org/what-we-do/}
+ 
+ Diciembre de 2008 entra en vigor la Carta de la ASEAN (acuerdo internacional jurídicamente vinculante) (Todos los gobiernos de los 10 estados miembors la han ratificado/aceptado), donde se establecen nuevos organos para impulsar un proceso de construcción comunitaria: comunidad político-seguridad, comunidad económica  y comunidad sociocultural de la ASSEAN. Art. 3 La ASEAN como organización intergubernamental queda dotada de personalidad jurídica. Un Consejo Coordinador de la ASEAN integrados por ministros de asuntos exteriores. Dos cumbres de la Asean, maximo organo de formlacion de políticas de la ASEAN, de Jefes de Estado/gobierno al año \url{https://asean.org/asean-charter/}
+ 
+ 
+ Comunidad de Seguridad Política (APSC) procupara garantizar la paz
+
+Comunidad Económica (AEC).
+1992 lideres de la ASEAN ordenan la creación del Área de Libre Comercio de la ASEAN (AFTA). Adopcion de vision de la ASEAN 2020 en 1997 previo como una region altamente competitiva con libre flujo de bienes servicios, inversiones, un flujo mas libre de capital, desarrollo economico equitativo y una reduccion de la pobreza y disparidades socieconómicas. Em 2003 Declaracion de la Concordia de la ASEAN II en 2003 que fijo el establecimiento de la Comunidad de la ASEAN (primero para 2020, luego acelerado a 2015).  Plan AEC 2015 fue adoptado en 2007 \url{https://asean.org/our-communities/economic-community-2/}
 
 \begin{figure}[H]
-	\begin{subfigure}{.8\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{communities_membership/IDN.png}
+		\includegraphics[width=\textwidth]{sankey_diagrams/asean.png}
+\end{figure}
+
+Área de Libre Comercio de la ASEAN (AFTA, por sus siglas en ingles):
+Revisar \url{https://fta.miti.gov.my/index.php/pages/view/asean-afta}
+
+
+\begin{figure}[H]
+	\begin{subfigure}{.6\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{images/communities_membership/IDN.png}
 	\end{subfigure}
-	\begin{subfigure}{.8\textwidth}
+	\par\medskip
+	\begin{subfigure}{.6\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{communities_membership/TWN.png}
+		\includegraphics[width=\textwidth]{images/communities_membership/TWN.png}
 	\end{subfigure}
-	\begin{subfigure}{.8\textwidth}
+	\par\medskip
+	\begin{subfigure}{.6\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{communities_membership/HKG.png}
+		\includegraphics[width=\textwidth]{images/communities_membership/HKG.png}
 	\end{subfigure}
 \end{figure}
+
 
 
  %\textcolor{blue}{Analizar la evolución histórica de algunos bloques. En particular, de la Unión Europea, el TLCAN y ASEAN}.
