@@ -1,0 +1,20 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'UNAMdissertemplate.blg'
+[82] biber-MSWIN64:342> INFO - === 
+[118] Biber.pm:421> INFO - Reading 'UNAMdissertemplate.bcf'
+[245] Biber.pm:1002> INFO - Found 93 citekeys in bib section 0
+[259] Biber.pm:4487> INFO - Processing section 0
+[267] Biber.pm:4678> INFO - Looking for bibtex file 'references.bib' for section 0
+[321] bibtex.pm:1713> INFO - LaTeX decoding ...
+[384] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[709] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[709] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[709] Biber.pm:4307> INFO - Sorting list 'apa/apasortcite//global/global/global' of type 'entry' with template 'apa' and locale 'es-ES'
+[826] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[826] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[826] Biber.pm:4307> INFO - Sorting list 'apa/global//global/global/global' of type 'entry' with template 'apa' and locale 'es-ES'
+[902] bbl.pm:676> INFO - Writing 'UNAMdissertemplate.bbl' with encoding 'UTF-8'
+[976] bbl.pm:779> INFO - Output to UNAMdissertemplate.bbl
+[976] Biber.pm:132> WARN - online entry 'ASEAN_AFTA' (references.bib): Invalid format 'n.d.' of date field 'date' - ignoring
+[976] Biber.pm:132> WARN - BibTeX subsystem: C:\Users\Saib\AppData\Local\Temp\biber_tmp_or8V\33e59b5ca9ec342068223d604c3f8d55_17916.utf8, line 895, warning: possible runaway string started at line 894
+[976] Biber.pm:134> INFO - WARNINGS: 2
