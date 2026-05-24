@@ -22,7 +22,7 @@ countries_names["RUS"] = "Rusia"
 countries_names["STP"] = "Saõ Tomé\nand Príncipe"
 
 COUNTRY_GROUPS = {
-    "asean": ["IDN","MYS","PHL","SGP","THA","VNM","KHM","LAO","MMR","BRN", "TWN"],
+    "asean": ["IDN","MYS","PHL","SGP","THA","VNM","KHM","LAO","MMR","BRN"],
     "asia": ["CHN","HKG","VNM","KHM", "MYS","PHL","SGP","THA","LAO", "TWN","IDN", "BRN","MMR",
              "BGD","PAK","JPN","KOR","SAU", "ARE", "IND"],
     "north_america": ["CAN", "USA","MEX"],
@@ -348,7 +348,17 @@ def sankey_membership_by_year(
     else:
         fig.show()
 
+#%%
 
+years = (1995, 2000, 2005, 2010, 2015, 2020, 2022)
+countries_sel = COUNTRY_GROUPS["asean"]
+df = membership_by_year.loc[countries_sel]
+sankey_membership_by_year(
+    df,
+    years,
+    True,
+    SAVE_DIR,
+    "asean")
 
 #%%
 #countries_sel = ["IDN","MYS","PHL","SGP","THA","VNM","KHM","LAO","MMR","BRN", "TWN","HKG"]
