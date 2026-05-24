@@ -3311,4 +3311,86 @@
     <bcf:citekey order="187" intorder="1">Maluck2015</bcf:citekey>
     <bcf:citekey order="188" intorder="1">Maluck2015</bcf:citekey>
     <bcf:citekey order="189" intorder="1">Xing2022</bcf:citekey>
-    <bcf:citekey o
+    <bcf:citekey order="190" intorder="1">Kireyev2022</bcf:citekey>
+    <bcf:citekey order="191" intorder="1">Kireyev2022</bcf:citekey>
+    <bcf:citekey order="192" intorder="1">Newman2004</bcf:citekey>
+    <bcf:citekey order="193" intorder="1">Newman2004</bcf:citekey>
+    <bcf:citekey order="194" intorder="1">Cerina2015</bcf:citekey>
+    <bcf:citekey order="194" intorder="2">Kireyev2022</bcf:citekey>
+    <bcf:citekey order="195" intorder="1">Cerina2015</bcf:citekey>
+    <bcf:citekey order="195" intorder="2">Kireyev2022</bcf:citekey>
+    <bcf:citekey order="196" intorder="1">ASEAN</bcf:citekey>
+    <bcf:citekey order="197" intorder="1">Ishikawa2021</bcf:citekey>
+    <bcf:citekey order="198" intorder="1">ASEAN_AFTA</bcf:citekey>
+    <bcf:citekey order="199" intorder="1">Ishikawa2021</bcf:citekey>
+    <bcf:citekey order="200" intorder="1">Ishikawa2021</bcf:citekey>
+    <bcf:citekey order="201" intorder="1">Ishikawa2021</bcf:citekey>
+    <bcf:citekey order="201" intorder="2">ASEAN_Vision_2020</bcf:citekey>
+    <bcf:citekey order="202" intorder="1">Ishikawa2021</bcf:citekey>
+    <bcf:citekey order="203" intorder="1">ASEAN_FTA</bcf:citekey>
+  </bcf:section>
+  <!-- SORTING TEMPLATES -->
+  <bcf:sortingtemplate name="apa">
+    <bcf:sort order="1">
+      <bcf:sortitem order="1">presort</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="2" final="1">
+      <bcf:sortitem order="1">sortkey</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="3">
+      <bcf:sortitem order="1">sortname</bcf:sortitem>
+      <bcf:sortitem order="2">author</bcf:sortitem>
+      <bcf:sortitem order="3">editor</bcf:sortitem>
+      <bcf:sortitem order="4">sorttitle</bcf:sortitem>
+      <bcf:sortitem order="5">title</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="4">
+      <bcf:sortitem order="1">pubstate</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="5">
+      <bcf:sortitem order="1">sortyear</bcf:sortitem>
+      <bcf:sortitem order="2">year</bcf:sortitem>
+      <bcf:sortitem order="3">eventyear</bcf:sortitem>
+      <bcf:sortitem literal="1" order="4">-2000000000</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="6">
+      <bcf:sortitem order="1">month</bcf:sortitem>
+      <bcf:sortitem order="2">eventmonth</bcf:sortitem>
+      <bcf:sortitem literal="1" order="3">-2000000000</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="7">
+      <bcf:sortitem order="1">day</bcf:sortitem>
+      <bcf:sortitem order="2">eventday</bcf:sortitem>
+      <bcf:sortitem literal="1" order="3">-2000000000</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="8">
+      <bcf:sortitem order="1">sorttitle</bcf:sortitem>
+      <bcf:sortitem order="2">title</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="9">
+      <bcf:sortitem order="1">volume</bcf:sortitem>
+      <bcf:sortitem literal="1" order="2">0</bcf:sortitem>
+    </bcf:sort>
+  </bcf:sortingtemplate>
+  <!-- DATALISTS -->
+  <bcf:datalist section="0"
+                name="apa/apasortcite//global/global/global"
+                type="entry"
+                sortingtemplatename="apa"
+                sortingnamekeytemplatename="apasortcite"
+                labelprefix=""
+                uniquenametemplatename="global"
+                labelalphanametemplatename="global"
+                namehashtemplatename="global">
+  </bcf:datalist>
+  <bcf:datalist section="0"
+                name="apa/global//global/global/global"
+                type="entry"
+                sortingtemplatename="apa"
+                sortingnamekeytemplatename="global"
+                labelprefix=""
+                uniquenametemplatename="global"
+                labelalphanametemplatename="global"
+                namehashtemplatename="global">
+  </bcf:datalist>
+</bcf:controlfile>

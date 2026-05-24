@@ -150,10 +150,10 @@
       \field{pages}{102283}
       \range{pages}{1}
     \endentry
-    \entry{ASEAN_Vision_2020}{online}{}{}
+    \entry{ASEAN}{online}{}{}
       \name{author}{1}{}{%
         {{hash=8907a936c23c66a949474224794f02d6}{%
-           family={ASEAN},
+           family={{ASEAN}},
            familyi={A\bibinitperiod}}}%
       }
       \strng{namehash}{8907a936c23c66a949474224794f02d6}
@@ -167,8 +167,78 @@
       \field{extraname}{1}
       \field{sortinit}{A}
       \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradate}{1}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Founding of ASEAN}
+      \field{urlday}{8}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://asean.org/the-founding-of-asean/
+      \endverb
+      \verb{url}
+      \verb https://asean.org/the-founding-of-asean/
+      \endverb
+    \endentry
+    \entry{ASEAN_FTA}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=8907a936c23c66a949474224794f02d6}{%
+           family={{ASEAN}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{8907a936c23c66a949474224794f02d6}
+      \strng{fullhash}{8907a936c23c66a949474224794f02d6}
+      \strng{fullhashraw}{8907a936c23c66a949474224794f02d6}
+      \strng{bibnamehash}{8907a936c23c66a949474224794f02d6}
+      \strng{authorbibnamehash}{8907a936c23c66a949474224794f02d6}
+      \strng{authornamehash}{8907a936c23c66a949474224794f02d6}
+      \strng{authorfullhash}{8907a936c23c66a949474224794f02d6}
+      \strng{authorfullhashraw}{8907a936c23c66a949474224794f02d6}
+      \field{extraname}{2}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradate}{2}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Free Trade Agreements with Dialogue Partners}
+      \field{urlday}{24}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://asean.org/free-trade-agreements-with-dialogue-partners/
+      \endverb
+      \verb{url}
+      \verb https://asean.org/free-trade-agreements-with-dialogue-partners/
+      \endverb
+      \warn{\item online entry 'ASEAN_FTA' (references.bib): Invalid format 'n.d.' of date field 'date' - ignoring}
+    \endentry
+    \entry{ASEAN_Vision_2020}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=8907a936c23c66a949474224794f02d6}{%
+           family={{ASEAN}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{8907a936c23c66a949474224794f02d6}
+      \strng{fullhash}{8907a936c23c66a949474224794f02d6}
+      \strng{fullhashraw}{8907a936c23c66a949474224794f02d6}
+      \strng{bibnamehash}{8907a936c23c66a949474224794f02d6}
+      \strng{authorbibnamehash}{8907a936c23c66a949474224794f02d6}
+      \strng{authornamehash}{8907a936c23c66a949474224794f02d6}
+      \strng{authorfullhash}{8907a936c23c66a949474224794f02d6}
+      \strng{authorfullhashraw}{8907a936c23c66a949474224794f02d6}
+      \field{extraname}{3}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{ASEAN Vision 2020}
@@ -184,34 +254,6 @@
       \verb{url}
       \verb https://asean.org/asean-vision-2020/
       \endverb
-    \endentry
-    \entry{ASEAN}{online}{}{}
-      \name{author}{1}{}{%
-        {{hash=84499c504b656020e256cdb724502dc5}{%
-           family={{ASEAN}},
-           familyi={A\bibinitperiod},
-           given={url\bibnamedelimb =\bibnamedelima https://asean.org/the-founding-of-asean/},
-           giveni={u\bibinitperiod\bibinitdelim =\bibinitperiod\bibinitdelim h\bibinithyphendelim f\bibinithyphendelim a\bibinitperiod},
-           suffix={title\bibnamedelimb =\bibnamedelima {The\bibnamedelimb Founding\bibnamedelimb of\bibnamedelimb ASEAN}},
-           suffixi={t\bibinitperiod\bibinitdelim =\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
-      }
-      \strng{namehash}{84499c504b656020e256cdb724502dc5}
-      \strng{fullhash}{84499c504b656020e256cdb724502dc5}
-      \strng{fullhashraw}{84499c504b656020e256cdb724502dc5}
-      \strng{bibnamehash}{84499c504b656020e256cdb724502dc5}
-      \strng{authorbibnamehash}{84499c504b656020e256cdb724502dc5}
-      \strng{authornamehash}{84499c504b656020e256cdb724502dc5}
-      \strng{authorfullhash}{84499c504b656020e256cdb724502dc5}
-      \strng{authorfullhashraw}{84499c504b656020e256cdb724502dc5}
-      \field{extraname}{2}
-      \field{sortinit}{A}
-      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
-      \field{labeldatesource}{nodate}
-      \field{labelnamesource}{author}
-      \field{urlday}{8}
-      \field{urlmonth}{5}
-      \field{urlyear}{2026}
-      \field{urldateera}{ce}
     \endentry
     \entry{ABD}{online}{}{}
       \name{author}{1}{}{%
@@ -3809,10 +3851,10 @@
       \field{pages}{102283}
       \range{pages}{1}
     \endentry
-    \entry{ASEAN_Vision_2020}{online}{}{}
+    \entry{ASEAN}{online}{}{}
       \name{author}{1}{}{%
         {{hash=8907a936c23c66a949474224794f02d6}{%
-           family={ASEAN},
+           family={{ASEAN}},
            familyi={A\bibinitperiod}}}%
       }
       \strng{namehash}{8907a936c23c66a949474224794f02d6}
@@ -3826,8 +3868,78 @@
       \field{extraname}{1}
       \field{sortinit}{A}
       \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradate}{1}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Founding of ASEAN}
+      \field{urlday}{8}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://asean.org/the-founding-of-asean/
+      \endverb
+      \verb{url}
+      \verb https://asean.org/the-founding-of-asean/
+      \endverb
+    \endentry
+    \entry{ASEAN_FTA}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=8907a936c23c66a949474224794f02d6}{%
+           family={{ASEAN}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{8907a936c23c66a949474224794f02d6}
+      \strng{fullhash}{8907a936c23c66a949474224794f02d6}
+      \strng{fullhashraw}{8907a936c23c66a949474224794f02d6}
+      \strng{bibnamehash}{8907a936c23c66a949474224794f02d6}
+      \strng{authorbibnamehash}{8907a936c23c66a949474224794f02d6}
+      \strng{authornamehash}{8907a936c23c66a949474224794f02d6}
+      \strng{authorfullhash}{8907a936c23c66a949474224794f02d6}
+      \strng{authorfullhashraw}{8907a936c23c66a949474224794f02d6}
+      \field{extraname}{2}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradate}{2}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Free Trade Agreements with Dialogue Partners}
+      \field{urlday}{24}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://asean.org/free-trade-agreements-with-dialogue-partners/
+      \endverb
+      \verb{url}
+      \verb https://asean.org/free-trade-agreements-with-dialogue-partners/
+      \endverb
+      \warn{\item online entry 'ASEAN_FTA' (references.bib): Invalid format 'n.d.' of date field 'date' - ignoring}
+    \endentry
+    \entry{ASEAN_Vision_2020}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=8907a936c23c66a949474224794f02d6}{%
+           family={{ASEAN}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{8907a936c23c66a949474224794f02d6}
+      \strng{fullhash}{8907a936c23c66a949474224794f02d6}
+      \strng{fullhashraw}{8907a936c23c66a949474224794f02d6}
+      \strng{bibnamehash}{8907a936c23c66a949474224794f02d6}
+      \strng{authorbibnamehash}{8907a936c23c66a949474224794f02d6}
+      \strng{authornamehash}{8907a936c23c66a949474224794f02d6}
+      \strng{authorfullhash}{8907a936c23c66a949474224794f02d6}
+      \strng{authorfullhashraw}{8907a936c23c66a949474224794f02d6}
+      \field{extraname}{3}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{ASEAN Vision 2020}
@@ -3843,34 +3955,6 @@
       \verb{url}
       \verb https://asean.org/asean-vision-2020/
       \endverb
-    \endentry
-    \entry{ASEAN}{online}{}{}
-      \name{author}{1}{}{%
-        {{hash=84499c504b656020e256cdb724502dc5}{%
-           family={{ASEAN}},
-           familyi={A\bibinitperiod},
-           given={url\bibnamedelimb =\bibnamedelima https://asean.org/the-founding-of-asean/},
-           giveni={u\bibinitperiod\bibinitdelim =\bibinitperiod\bibinitdelim h\bibinithyphendelim f\bibinithyphendelim a\bibinitperiod},
-           suffix={title\bibnamedelimb =\bibnamedelima {The\bibnamedelimb Founding\bibnamedelimb of\bibnamedelimb ASEAN}},
-           suffixi={t\bibinitperiod\bibinitdelim =\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
-      }
-      \strng{namehash}{84499c504b656020e256cdb724502dc5}
-      \strng{fullhash}{84499c504b656020e256cdb724502dc5}
-      \strng{fullhashraw}{84499c504b656020e256cdb724502dc5}
-      \strng{bibnamehash}{84499c504b656020e256cdb724502dc5}
-      \strng{authorbibnamehash}{84499c504b656020e256cdb724502dc5}
-      \strng{authornamehash}{84499c504b656020e256cdb724502dc5}
-      \strng{authorfullhash}{84499c504b656020e256cdb724502dc5}
-      \strng{authorfullhashraw}{84499c504b656020e256cdb724502dc5}
-      \field{extraname}{2}
-      \field{sortinit}{A}
-      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
-      \field{labeldatesource}{nodate}
-      \field{labelnamesource}{author}
-      \field{urlday}{8}
-      \field{urlmonth}{5}
-      \field{urlyear}{2026}
-      \field{urldateera}{ce}
     \endentry
     \entry{ABD}{online}{}{}
       \name{author}{1}{}{%
