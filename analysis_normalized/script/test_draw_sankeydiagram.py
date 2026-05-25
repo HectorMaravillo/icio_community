@@ -263,6 +263,7 @@ def sankey_membership_by_year(
     
     # +1 porque existe una columna inicial para country
     n_levels = len(years) + 1  
+    left_margin = 0.25
     
     # Posición de nodos de países
     for _ in long["country"].unique():
@@ -324,7 +325,7 @@ def sankey_membership_by_year(
     # -------------------------------------------------- 
     for i, year in enumerate(years):
         x = (i + 1) / (n_levels - 1)
-    
+        
         fig.add_annotation(
             x=x,
             y=1.08,
@@ -334,6 +335,10 @@ def sankey_membership_by_year(
             showarrow=False,
             font=dict(size=14)
         )
+    fig.update_layout(
+        width=2000,
+        height=900
+    )
     if save:
         # Plotly config for output behavio
         config = {'scrollZoom': True, 
@@ -350,7 +355,7 @@ def sankey_membership_by_year(
 
 #%%
 
-years = (1995, 2000, 2005, 2010, 2015, 2020, 2022)
+years = range(1995, 2023)
 countries_sel = COUNTRY_GROUPS["asean"]
 df = membership_by_year.loc[countries_sel]
 sankey_membership_by_year(
@@ -358,7 +363,7 @@ sankey_membership_by_year(
     years,
     True,
     SAVE_DIR,
-    "asean")
+    "asean_all")
 
 #%%
 #countries_sel = ["IDN","MYS","PHL","SGP","THA","VNM","KHM","LAO","MMR","BRN", "TWN","HKG"]
