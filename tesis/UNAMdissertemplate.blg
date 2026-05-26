@@ -1,20 +1,20 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'UNAMdissertemplate.blg'
-[87] biber-MSWIN64:342> INFO - === 
-[125] Biber.pm:421> INFO - Reading 'UNAMdissertemplate.bcf'
-[259] Biber.pm:1002> INFO - Found 94 citekeys in bib section 0
-[274] Biber.pm:4487> INFO - Processing section 0
-[282] Biber.pm:4678> INFO - Looking for bibtex file 'references.bib' for section 0
-[339] bibtex.pm:1713> INFO - LaTeX decoding ...
-[403] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
-[748] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
-[748] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[749] Biber.pm:4307> INFO - Sorting list 'apa/apasortcite//global/global/global' of type 'entry' with template 'apa' and locale 'es-ES'
-[871] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
-[871] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[871] Biber.pm:4307> INFO - Sorting list 'apa/global//global/global/global' of type 'entry' with template 'apa' and locale 'es-ES'
-[947] bbl.pm:676> INFO - Writing 'UNAMdissertemplate.bbl' with encoding 'UTF-8'
-[1025] bbl.pm:779> INFO - Output to UNAMdissertemplate.bbl
-[1025] Biber.pm:132> WARN - online entry 'ASEAN_AFTA' (references.bib): Invalid format 'n.d.' of date field 'date' - ignoring
-[1025] Biber.pm:132> WARN - online entry 'ASEAN_FTA' (references.bib): Invalid format 'n.d.' of date field 'date' - ignoring
-[1025] Biber.pm:134> INFO - WARNINGS: 2
+[666] biber-MSWIN64:342> INFO - === 
+[1031] Biber.pm:421> INFO - Reading 'UNAMdissertemplate.bcf'
+[1391] Biber.pm:1002> INFO - Found 94 citekeys in bib section 0
+[1626] Biber.pm:4487> INFO - Processing section 0
+[1683] Biber.pm:4678> INFO - Looking for bibtex file 'references.bib' for section 0
+[1858] bibtex.pm:1713> INFO - LaTeX decoding ...
+[2110] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[3233] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[3234] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[3234] Biber.pm:4307> INFO - Sorting list 'apa/apasortcite//global/global/global' of type 'entry' with template 'apa' and locale 'es-ES'
+[3544] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[3544] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[3544] Biber.pm:4307> INFO - Sorting list 'apa/global//global/global/global' of type 'entry' with template 'apa' and locale 'es-ES'
+[4085] bbl.pm:676> INFO - Writing 'UNAMdissertemplate.bbl' with encoding 'UTF-8'
+[4279] bbl.pm:779> INFO - Output to UNAMdissertemplate.bbl
+[4280] Biber.pm:132> WARN - online entry 'ASEAN_AFTA' (references.bib): Invalid format 'n.d.' of date field 'date' - ignoring
+[4280] Biber.pm:132> WARN - online entry 'ASEAN_FTA' (references.bib): Invalid format 'n.d.' of date field 'date' - ignoring
+[4280] Biber.pm:134> INFO - WARNINGS: 2
