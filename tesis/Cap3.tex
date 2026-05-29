@@ -112,7 +112,7 @@ Como ejercicio de validación de la modularidad como medida de calidad de las pa
 
 \section{Análisis regional}
 
-La figura \ref{ComunidadesPorPais} muestra la integración de las economías nacionales en los bloques comerciales identificados por el algoritmo de Leiden. Cada fila representa un país y cada columna un año. El color de cada celda indica a que comunidad pertenece el 50\% + 1 de los sectores económicos de un país en un año específico. Esta figura permite hacer un análisis general de la integración y evolución de los bloques comerciales, incluyendo el fortalecimiento o debilitamiento de estos. Por ejemplo, un caso de fortalecimiento es el papel de Alemania en Europa central:  de 1995 a 1999  las economías de Austria, República Checa, Croacia, Hungría, Eslovaquia y Eslovenia formaron un bloque comercial; pero a partir del año 2000, estos países se fueron integrando a una comunidad encabezada por Alemania, junto con Polonia y Rumania. Por otra parte, en el caso de los países bálticos (Lituania y Letonia), sus economías estuvieron integradas al bloque comercial encabezado por Rusia hasta 2014, para posteriormente formar parte de una comunidad encabezada por Suecia.
+La figura \ref{ComunidadesPorPais} muestra la integración de las economías nacionales en los bloques comerciales identificados por el algoritmo de Leiden. Esta figura permite hacer un análisis general de la integración y evolución de los bloques comerciales, incluyendo el fortalecimiento o debilitamiento de estos. Por ejemplo, un caso de fortalecimiento es el papel de Alemania en Europa central:  de 1995 a 1999 las economías de Austria, República Checa, Croacia, Hungría, Eslovaquia y Eslovenia formaron un bloque comercial; pero a partir del año 2000, estos países se fueron integrando a una comunidad encabezada por Alemania, junto con Polonia y Rumania. Por otra parte, en el caso de los países bálticos (Lituania y Letonia), sus economías estuvieron integradas al bloque comercial encabezado por Rusia hasta 2014, para posteriormente formar parte de una comunidad encabezada por Suecia.
 
 
 \graphicspath{
@@ -121,9 +121,10 @@ La figura \ref{ComunidadesPorPais} muestra la integración de las economías nac
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1.1\linewidth]{images/ComunidadesPorPais.png}
-	\caption{Integración de las economías nacionales en bloques comerciales.} 
+	\caption{Integración de las economías nacionales en bloques comerciales$^{*}$.} 
 	\label{ComunidadesPorPais}
-	%\caption{\textcolor{blue}{La gráfica muestra a que bloque está integrado la mayoría de la economía de un país. Esto es a que bloque pertenece el 50\%+1 de los sectores de un país. Puede verse cuando dos bloques se unifican. Por ejemplo a partir de 2000, los paies de Europa central y alemania forman un bloque. También se ve cuando un país deja de estar dentro de un bloque por ejemplo, Lituania, letonia y polonia dejan de estar en el bloque de rusia a partir de 2015.}}
+	
+	\caption*{\footnotesize $^{*}$ Cada fila representa un país y cada columna un año. El color de cada celda indica a que comunidad pertenece el 50\% + 1 de los sectores económicos de un país en un año específico. Cada comunidad es identificada por el país del vértice que en ese año tuvo la mayor fuerza de salida dentro de la comunidad.}
 \end{figure}
 
 \subsection{ASEAN}
@@ -137,7 +138,7 @@ La Comunidad Económica de la ASEAN (AEC) fue planteada por primera vez en 2003 
 
 El establecimiento de la AEC se logró en 2015, conforme al calendario previsto, aunque no todas las medidas acordadas en el Plan Maestro de la AEC 2015 fueron implementados. Un elemento clave que ayudó al cumplimiento de este compromiso fue la sustitución del esquema CEPT por el Acuerdo de Comercio de Mercancías de la ASEAN (ATIGA) en 2010. El logro más importante del AEC fue la eliminación de aranceles, alcanzando una tasa de liberalización comercial\footnote{Porcentaje de líneas arancelarias sujetas a eliminación} del 98.6\%. En contraste, existen otros elementos que han avanzado con mayor lentitud como la reducción de barreras no arancelarias, y la liberalización del comercio de servicios y de las inversiones \parencite[p.~29]{Ishikawa2021}.
 
-Aunque los marcos de integración económica del ASEAN no incluyen un arancel común al exterior, la Asociación ha establecido de manera conjunta acuerdos de libre comercio y de asociación económica con otros países asiaticos bajo el esquema ASEAN+1, En particular, se establecieron acuerdos de libre comercio con China (2004), Korea (2007), Japón (2009), Australia y Nueva Zelanda (2010), India (2010) y Hong Kong (2019) \parencite{ASEAN_FTA}.
+Aunque los marcos de integración económica del ASEAN no incluyen un arancel común al exterior, la Asociación ha establecido de manera conjunta acuerdos de libre comercio y de asociación económica con otros países asiáticos bajo el esquema ASEAN+1, En particular, se establecieron acuerdos de libre comercio con China (2004), Corea del Sur (2007), Japón (2009), Australia y Nueva Zelanda (2010), India (2010) y Hong Kong (2019) \parencite{ASEAN_FTA}.
 % ASEAN-CHINA FTA (ACFTA)effect 2004
 % ASEAN-Korea FTA (AKFTA) effect 2007
 % ASEAN-Japon FTA (AJFTA) effect 2008
@@ -153,26 +154,34 @@ Aunque los marcos de integración económica del ASEAN no incluyen un arancel co
 % La CEA aspira a consolidar a la ASEAN como un mercado único y una base de producción, una región económica altamente competitiva, una región de desarrollo económico equitativo y una región plenamente integrada en la economía global (nota 17). Estos cuatro objetivos constituyen los cuatro pilares del Plan de la CEA.
 
 
-\textcolor{red}{Por su parte, el análisis de las comunidades en la red insumo-producto mundial ofrece una oportunidad para evaluar el nivel de integración económica del ASEAN a partir de sus vínculos interindustriales. En primer lugar, los resultados indican un fuerte nivel de estabilidad en la integración económica de la región, en el sentido de que la economía la mayoría de países miembros pertenecen al mismo bloque económico durante el periodo estudiado (véase la figura \ref{ComunidadesPorPais_ASEAN}). En segundo lugar, en análisis de comunidades permitió identificar a los países que con menor cohesión en la economía regional de la ASEAN, a partir del número de años en los que sus economías conforman una comunidad individual: Indonesia (14 años), Myanmar (13 años),  Brunei (6 años) y Filipinas (4 años). En contraste, también se observaron vínculos de integración con economías externas al ASEAN, particularmente Taiwán y Hong Kong. El Caso de Taiwán resulta relevante, ya que durante todo el periodo estudiado formó parte del bloque económico asociado a la mayoría de países del ASEAN. Finalmente, los resultados no muestran una asociación directa con el establecimiento de acuerdos de libre comercio formales. Por ejemplo, aunque el ASEAN ha formalizado áreas de libre comercio con países como China o India, esto no se ve reflejado directamente en la integración de sus economías en la misma comunidad. En el caso de Hong Kong, su integración al bloque económico asociado a la ASEAN ocurre años antes del establecimiento de un acuerdo oficial. Sólo en el caso de Corea hay una integración estable a su comunidad de las economías de Vietnam y Camboya a partir de 2016. Por el contrario, aunque el ASEAN no cuenta con un tratado de libre comercio con Taiwán, su economía se encuentra estrechamente vinculada a la de los países del ASEAN a través de sus vínculos interindustriales.}
+Por su parte, el análisis de las comunidades en la red insumo-producto mundial ofrece una oportunidad para evaluar el nivel de integración económica del ASEAN a partir de sus vínculos interindustriales. En primer lugar, los resultados indican un fuerte nivel de estabilidad en la integración económica de la región, en el sentido de que la economía la mayoría de países miembros pertenecen al mismo bloque económico durante el periodo estudiado (véase la figura \ref{ComunidadesPorPais_ASEAN}\footnote{El color en la gráfica depende del país al que pertenece el vértice con mayor fuerza de salida en ese año. Eso puede causar un efecto visual de contraste en una misma comunidad.  Por ejemplo, en 2005 y 2006 todos los países del ASEAN más Taiwán formaron una sola comunidad, sólo que en 2005 el nodo con mayor fuerza de salida era de Taiwán y en 2006 de Indonesia, lo cual explica el cambio abrupto de color. Por lo tanto, la gráfica no debe evaluarse únicamente por el color, sino por los países que pertenecen a un mismo color.}). En segundo lugar, el análisis de comunidades permitió identificar a los países que con menor cohesión en la economía regional de la ASEAN, a partir del número de años en los que sus economías conforman una comunidad individual: Indonesia (14 años), Myanmar (13 años), Brunei (6 años) y Filipinas (4 años). En contraste, también se observaron vínculos de integración con economías externas al ASEAN, particularmente Taiwán y Hong Kong. El caso de Taiwán resulta relevante, ya que durante todo el periodo estudiado formó parte del bloque económico asociado a la mayoría de países del ASEAN. Finalmente, los resultados no muestran una asociación directa con el establecimiento de acuerdos de libre comercio formales. Por ejemplo, aunque el ASEAN ha formalizado áreas de libre comercio con países como China o India, esto no se ve reflejado directamente en la integración de sus economías en la misma comunidad. En el caso de Hong Kong, su integración al bloque económico asociado a la ASEAN ocurre años antes de la firma del acuerdo en 2019. Sólo en el caso de Corea del Sur hay una integración estable a su comunidad de las economías de Vietnam y Camboya a partir de 2016. Por el contrario, aunque el ASEAN no cuenta con un tratado de libre comercio con Taiwán, su economía se encuentra estrechamente vinculada a la de los países del ASEAN a través de sus vínculos interindustriales.
 
-%Finalmente, los resultados muestran que los acuerdos de libre comercio no necesariamente se traducen en una 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{images/ComunidadesPorPais_ASEAN.png}
-	\caption{Integración de las economías del ASEAN en bloques comerciales.}
+	\caption{Integración de las economías del ASEAN en bloques comerciales$^{*}$.}
 	\label{ComunidadesPorPais_ASEAN}
+	
+	\caption*{\footnotesize $^{*}$ Las filas representan países y las columnas años. El color de cada celda corresponde al color de la comunidad a la cual pertenece la mayoría de los sectores económicos de un país en el año correspondiente. Cada comunidad se identifica con el país del vértice con la mayor fuerza de salida.}
 \end{figure}
 
 
-\textcolor{red}{La dinámica de las comunidades identificadas permite establecer cuatro periodos en el proceso de integración económica del sudeste asiático:}
+La dinámica de las comunidades identificadas permite establecer cuatro periodos en el proceso de integración económica del sudeste asiático:
 \begin{itemize}
-	\item De 1995 a 2004, durante este periodo, el bloque económico asociado al ASEAN se compone de las economías de Vietnam, Camboya, Malasia, Filipinas, Singapur, Tailandia, Laos y Taiwan. Por su parte, Indonesia, Brunei y Myanmar forman comunidades individuales en algunos lapsos de años. Este periodo coincide con la consolidación del AFTA y la reducción gradual de aranceles en la región. Además, en estos años hay muchos sectores individuales de los países del ASEAN que forman parte de otras comunidades externas a la región, principalmente en las comunidades de Hong Kong y Japón.
+	\item De 1995 a 2004, durante este periodo, el bloque económico asociado al ASEAN se compone de las economías de Vietnam, Camboya, Malasia, Filipinas, Singapur, Tailandia, Laos y Taiwán. Por su parte, Indonesia, Brunei y Myanmar forman comunidades individuales en algunos lapsos de años. Este periodo coincide con la consolidación del AFTA y la reducción gradual de aranceles en la región. Además, en estos años hay muchos sectores individuales de los países del ASEAN que forman parte de otras comunidades externas a la región, principalmente en las comunidades de Hong Kong y Japón (véase la figura \ref{DiagramaSankey_ASEAN}).\footnote{Dentro de este conjunto, destacan la extracción de minerales metálicos (B07) de Filipinas que perteneció a la comunidad de Japón e 1995 a 1998;  la extracción de petróleo crudo y gas natural (B06) de Brunei que estuvo integrado al bloque comercial de Japón de 2001 y 2003; y las actividades postales y de mensajería (H53) de varios países de la ASEAN que durante todo el periodo estuvieron en la comunidad encabezada por Hong Kong.}
 	\item De 2005 a 2008, es el periodo en el que los 10 países del ASEAN forman parte de la misma comunidad, junto con Taiwán y Hong Kong.  Este periodo se encuentra enmarcado por los trabajos del ASEAN de establecer su Comunidad Económica (AEC). 
 	\item De 2009 a 2015, el bloque económico asociado al ASEAN se reduce, con la salida de Myanmar, Indonesia y Filipinas de la comunidad. Esto podría reflejar las consecuencias que tuvo la crisis internacional de 2008, en el proceso de integración regional. 
-	\item De 2016 a 2022, se observa una fragmentación en la región, con la integración estable de las economías de Vietnam y Camboya a la comunidad de Corea del Sur. 
+	\item De 2016 a 2022, se observa una fragmentación en la región, con la integración estable de las economías de Vietnam y Camboya a la comunidad de Corea del Sur. Durante este periodo, nuevamente hay sectores individuales de los países del ASEAN que se integran a otras comunidades, como las de China, Estados Unidos, Reino Unido y Japón (véase la figura \ref{DiagramaSankey_ASEAN}).\footnote{Por ejemplo, la extracción de minerales metálicos (B07) de Filipinas estuvo alineada a la economía China a partir de 2017; y la industria de productos de madera (C16) y de caucho y plástico (C22) de Camboya se integró al bloque comercial estadounidense desde 2020.}
 \end{itemize}
 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{sankey_diagrams/north_america.png}
+	\caption{Evolución de la pertenencia a comunidades de los sectores económicos de los países de la ASEAN}
+	\label{DiagramaSankey_ASEAN}
+\end{figure}
 
 %Extraccion de mienrales metalicos Filipinas - Japon 1995, 1996, 97, 98
 	
@@ -181,15 +190,8 @@ Aunque los marcos de integración económica del ASEAN no incluyen un arancel co
 
 
 
-%\textcolor{blue}{Observaciones: 1) Hay cierta estabilidad en el sentido que la mayoría de los paises de la asean siempre pertenecen a la misma comunidad, aunque la comunidad esté encabezada por otros países. 2) De 1995 a 2002 esta comunidad estuvo encabezada por Taiwan, posteriormentemaoritariamente por indonesia, y luego por Singapur. 3). Indonesi, Bruneii y miarmar son paises que por temporatadas se salen para formar su propia comunidad. Filipinas de 2011 a 2014.  }
+%\textcolor{blue}{Observaciones: 1) Hay cierta estabilidad en el sentido que la mayoría de los paises de la asean siempre pertenecen a la misma comunidad, aunque la comunidad esté encabezada por otros países. 2) De 1995 a 2002 esta comunidad estuvo encabezada por Taiwán, posteriormentemaoritariamente por indonesia, y luego por Singapur. 3). Indonesi, Bruneii y miarmar son paises que por temporatadas se salen para formar su propia comunidad. Filipinas de 2011 a 2014.  }
 
-
-
-\begin{figure}[H]
-		\centering
-		\includegraphics[width=\textwidth]{sankey_diagrams/asean_all.png}
-		\caption{Evolución de la pertenencia a comunidades de los sectores económicos de los países de la ASEAN}
-\end{figure}
 
 %Área de Libre Comercio de la ASEAN (AFTA, por sus siglas en ingles):
 %Revisar \url{https://fta.miti.gov.my/index.php/pages/view/asean-afta}
@@ -206,7 +208,7 @@ Aunque los marcos de integración económica del ASEAN no incluyen un arancel co
 %	\begin{subfigure}{.6\textwidth}
 %		\centering
 %		\includegraphics[width=\textwidth]{images/communities_membership/TWN.png}
-%		\caption{Comunidad encabezada por Taiwan}
+%		\caption{Comunidad encabezada por Taiwán}
 %	\end{subfigure}
 %	\par\medskip
 %	\begin{subfigure}{.6\textwidth}
@@ -218,12 +220,38 @@ Aunque los marcos de integración económica del ASEAN no incluyen un arancel co
 %\end{figure}
 
 
+\subsection{TLCAN-TMEC}
 
- %\textcolor{blue}{Analizar la evolución histórica de algunos bloques. En particular, de la Unión Europea, el TLCAN y ASEAN}.
+En 1989 Canadá y Estados Unidos establecieron un Acuerdo de Libre Comercio (CUSFTA) para eliminar aranceles y reducir barreras comerciales, no sólo para bienes, sino también para servicios. Este acuerdo fue la base directa para el surgimiento del Tratado de Libre Comercio de América del Norte (TLCAN) entre México, Estados Unidos y Canadá que entró en vigor el 1° de enero de 1994 \parencite[p.~170]{Nagy2025}. El TLCAN fue estructurado como tres acuerdos bilaterales: Canadá - Estados Unidos; Estados Unidos - México y México - Canadá. El primero acuerdo corresponde al CUSFTA y los otros dos acuerdos fueron se establecieron con el propio TLCAN \parencite[p.~14]{Kondonassis2008}. 
+
+Algunos autores, como \textcite{Nagy2025} y \textcite{Kondonassis2008} coinciden en que uno de los retos más importantes del TLCAN es que fue el primer acuerdo comercial que intentó la integración entre países con niveles de desarrollo muy diferentes.
 
 
 
+Dos de los mecanismos más importantes del TLCAN son las normas de \textit{trato naciona} y el trato de nación más favorecidas, que se encuentran en el Capítulo 1 del acuerdo. El primer principio implica que los bienes, servicios e inversiones de empresas de un país del TLCAN no deben sufrir discriminación debido a su origen nacional; mientras que el principio del \textit{trato de nación más favorecida} establece que cada país dentro del acuerdo debe extender a los otros dos integrantes el trato más favorable que ofrece a países externos al TLCAN en términos de aranceles y regulación \parencite[p.~21]{Anderson2008}. 
+% One of the problems with NAFTA is that integration was tried among countries of such disparate levels of development. Kondonassis2008 - 17
+% NAFTA is a trade agreement and after ten years remains as such, but is limited. It falls short of a full free trade agreement because it includes much exclusion that effectively deny market access. Kondonassis2008 - 21
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{images/ComunidadesPorPais_TLCAN.png}
+	\caption{Integración de las economías del ASEAN en bloques comerciales$^{*}$.}
+	\label{ComunidadesPorPais_TLCAN}
+	
+	\caption*{\footnotesize $^{*}$ Las filas representan países y las columnas años. El color de cada celda corresponde al color de la comunidad a la cual pertenece la mayoría de los sectores económicos de un país en el año correspondiente. Cada comunidad se identifica con el país del vértice con la mayor fuerza de salida.}
+\end{figure}
 
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{sankey_diagrams/asean_all.png}
+	\caption{Evolución de la pertenencia a comunidades de los sectores económicos de México, Estados Unidos y Canadá}
+	\label{DiagramaSankey_TLCAN}
+\end{figure}
+
+% C24B (Metales preciosos basicos y otros metales no ferrosos) Canadá 1995-1996, 1999-2000 En EU
+% B06 Extraccion de crudo Canadá 1998-2004 y 2022 EU
+% B06 Extracción de crudo México 2022 en EU
 
 
 

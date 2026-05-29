@@ -69,6 +69,7 @@ else:
     country_communities.to_csv(RESULTS_DIR / "Community_by_country.csv")
     
 COUNTRY_ORDER = ["IDN","MYS","PHL","SGP","THA","VNM","KHM","LAO","MMR","BRN", "TWN","HKG"]
+COUNTRY_ORDER = ["CAN", "USA", "MEX"]
 country_communities = country_communities.loc[COUNTRY_ORDER]
 
 communities_unique = set(communities_unique)-{nan}
@@ -118,6 +119,7 @@ ax.tick_params(axis='y', left=False, right=False)
 
 # Set legend
 communities_unique = ["IDN", "TWN", "MMR", "HKG", "BRN", "PAK", "JPN", "SGP", "KOR", "BGD", "PHL"]
+communities_unique = COUNTRY_ORDER
 community_names = sorted(communities_unique)
 legend_elements = [
     Patch(facecolor=colors[country], edgecolor=None, label=country)

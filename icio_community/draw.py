@@ -622,7 +622,9 @@ def draw_subgraph_network(communities, i,
                           strength="out", 
                           by = "country",
                           percentil = 99,
-                          niter=50):
+                          niter=50,
+                          width=600,
+                          height=600):
     # Filtrar subgrafica
     sub_g = communities.p.subgraphs()[i]
     
@@ -708,7 +710,10 @@ def draw_subgraph_network(communities, i,
     # Crear nodos por codigo
     for code in sorted(set(sub_g.vs[by])):
         indices = [i for i, c in enumerate(sub_g.vs[by]) if c == code]
-        name = code
+        if by == "country":
+            name = countries_names[code]
+        if by == "activity":
+            name = activities_names[code]
         color = rgb2hex(colors[code])   
         scatter = go.Scatter(
             x=x[indices],
@@ -733,8 +738,8 @@ def draw_subgraph_network(communities, i,
           yaxis=dict(showgrid=False, zeroline=False, visible=False),
           plot_bgcolor='white',
           hoverlabel=dict(bgcolor="white", font_size=6),
-          width=600,
-          height=600,
+          width=width,
+          height=height,
           legend=dict(
               font={"size": 6}
           )

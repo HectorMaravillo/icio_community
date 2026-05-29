@@ -11,43 +11,45 @@
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Evolución del comercio intermedio global}}{29}{figure.caption.17}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Resultados del algoritmo de Leiden.}}{32}{figure.caption.18}%
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Tiempo de ejecución de los algoritmos de Leiden y de Louvain}}{33}{figure.caption.19}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Integración de las economías nacionales en bloques comerciales.}}{35}{figure.caption.20}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Integración de las economías del ASEAN en bloques comerciales.}}{38}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Integración de las economías nacionales en bloques comerciales$^{*}$.}}{35}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Integración de las economías del ASEAN en bloques comerciales$^{*}$.}}{38}{figure.caption.21}%
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Evolución de la pertenencia a comunidades de los sectores económicos de los países de la ASEAN}}{39}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Integración de las economías del ASEAN en bloques comerciales$^{*}$.}}{40}{figure.caption.23}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Evolución de la pertenencia a comunidades de los sectores económicos de México, Estados Unidos y Canadá}}{40}{figure.caption.24}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces Resultados de la detección de comunidades en 1995.}}{47}{figure.caption.24}%
-\contentsline {figure}{\numberline {C.2}{\ignorespaces Resultados de la detección de comunidades en 1996.}}{48}{figure.caption.25}%
-\contentsline {figure}{\numberline {C.3}{\ignorespaces Resultados de la detección de comunidades en 1997.}}{49}{figure.caption.26}%
-\contentsline {figure}{\numberline {C.4}{\ignorespaces Resultados de la detección de comunidades en 1998.}}{50}{figure.caption.27}%
-\contentsline {figure}{\numberline {C.5}{\ignorespaces Resultados de la detección de comunidades en 1999.}}{51}{figure.caption.28}%
-\contentsline {figure}{\numberline {C.6}{\ignorespaces Resultados de la detección de comunidades en 2000.}}{52}{figure.caption.29}%
-\contentsline {figure}{\numberline {C.7}{\ignorespaces Resultados de la detección de comunidades en 2001.}}{53}{figure.caption.30}%
-\contentsline {figure}{\numberline {C.8}{\ignorespaces Resultados de la detección de comunidades en 2002.}}{54}{figure.caption.31}%
-\contentsline {figure}{\numberline {C.9}{\ignorespaces Resultados de la detección de comunidades en 2003.}}{55}{figure.caption.32}%
-\contentsline {figure}{\numberline {C.10}{\ignorespaces Resultados de la detección de comunidades en 2004.}}{56}{figure.caption.33}%
-\contentsline {figure}{\numberline {C.11}{\ignorespaces Resultados de la detección de comunidades en 2005.}}{57}{figure.caption.34}%
-\contentsline {figure}{\numberline {C.12}{\ignorespaces Resultados de la detección de comunidades en 2006.}}{58}{figure.caption.35}%
-\contentsline {figure}{\numberline {C.13}{\ignorespaces Resultados de la detección de comunidades en 2007.}}{59}{figure.caption.36}%
-\contentsline {figure}{\numberline {C.14}{\ignorespaces Resultados de la detección de comunidades en 2008.}}{60}{figure.caption.37}%
-\contentsline {figure}{\numberline {C.15}{\ignorespaces Resultados de la detección de comunidades en 2009.}}{61}{figure.caption.38}%
-\contentsline {figure}{\numberline {C.16}{\ignorespaces Resultados de la detección de comunidades en 2010.}}{62}{figure.caption.39}%
-\contentsline {figure}{\numberline {C.17}{\ignorespaces Resultados de la detección de comunidades en 2011.}}{63}{figure.caption.40}%
-\contentsline {figure}{\numberline {C.18}{\ignorespaces Resultados de la detección de comunidades en 2012.}}{64}{figure.caption.41}%
-\contentsline {figure}{\numberline {C.19}{\ignorespaces Resultados de la detección de comunidades en 2013.}}{65}{figure.caption.42}%
-\contentsline {figure}{\numberline {C.20}{\ignorespaces Resultados de la detección de comunidades en 2014.}}{66}{figure.caption.43}%
-\contentsline {figure}{\numberline {C.21}{\ignorespaces Resultados de la detección de comunidades en 2015.}}{67}{figure.caption.44}%
-\contentsline {figure}{\numberline {C.22}{\ignorespaces Resultados de la detección de comunidades en 2016.}}{68}{figure.caption.45}%
-\contentsline {figure}{\numberline {C.23}{\ignorespaces Resultados de la detección de comunidades en 2017.}}{69}{figure.caption.46}%
-\contentsline {figure}{\numberline {C.24}{\ignorespaces Resultados de la detección de comunidades en 2018.}}{70}{figure.caption.47}%
-\contentsline {figure}{\numberline {C.25}{\ignorespaces Resultados de la detección de comunidades en 2019.}}{71}{figure.caption.48}%
-\contentsline {figure}{\numberline {C.26}{\ignorespaces Resultados de la detección de comunidades en 2020.}}{72}{figure.caption.49}%
-\contentsline {figure}{\numberline {C.27}{\ignorespaces Resultados de la detección de comunidades en 2021.}}{73}{figure.caption.50}%
-\contentsline {figure}{\numberline {C.28}{\ignorespaces Resultados de la detección de comunidades en 2022.}}{74}{figure.caption.51}%
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Resultados de la detección de comunidades en 1995.}}{48}{figure.caption.26}%
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Resultados de la detección de comunidades en 1996.}}{49}{figure.caption.27}%
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Resultados de la detección de comunidades en 1997.}}{50}{figure.caption.28}%
+\contentsline {figure}{\numberline {C.4}{\ignorespaces Resultados de la detección de comunidades en 1998.}}{51}{figure.caption.29}%
+\contentsline {figure}{\numberline {C.5}{\ignorespaces Resultados de la detección de comunidades en 1999.}}{52}{figure.caption.30}%
+\contentsline {figure}{\numberline {C.6}{\ignorespaces Resultados de la detección de comunidades en 2000.}}{53}{figure.caption.31}%
+\contentsline {figure}{\numberline {C.7}{\ignorespaces Resultados de la detección de comunidades en 2001.}}{54}{figure.caption.32}%
+\contentsline {figure}{\numberline {C.8}{\ignorespaces Resultados de la detección de comunidades en 2002.}}{55}{figure.caption.33}%
+\contentsline {figure}{\numberline {C.9}{\ignorespaces Resultados de la detección de comunidades en 2003.}}{56}{figure.caption.34}%
+\contentsline {figure}{\numberline {C.10}{\ignorespaces Resultados de la detección de comunidades en 2004.}}{57}{figure.caption.35}%
+\contentsline {figure}{\numberline {C.11}{\ignorespaces Resultados de la detección de comunidades en 2005.}}{58}{figure.caption.36}%
+\contentsline {figure}{\numberline {C.12}{\ignorespaces Resultados de la detección de comunidades en 2006.}}{59}{figure.caption.37}%
+\contentsline {figure}{\numberline {C.13}{\ignorespaces Resultados de la detección de comunidades en 2007.}}{60}{figure.caption.38}%
+\contentsline {figure}{\numberline {C.14}{\ignorespaces Resultados de la detección de comunidades en 2008.}}{61}{figure.caption.39}%
+\contentsline {figure}{\numberline {C.15}{\ignorespaces Resultados de la detección de comunidades en 2009.}}{62}{figure.caption.40}%
+\contentsline {figure}{\numberline {C.16}{\ignorespaces Resultados de la detección de comunidades en 2010.}}{63}{figure.caption.41}%
+\contentsline {figure}{\numberline {C.17}{\ignorespaces Resultados de la detección de comunidades en 2011.}}{64}{figure.caption.42}%
+\contentsline {figure}{\numberline {C.18}{\ignorespaces Resultados de la detección de comunidades en 2012.}}{65}{figure.caption.43}%
+\contentsline {figure}{\numberline {C.19}{\ignorespaces Resultados de la detección de comunidades en 2013.}}{66}{figure.caption.44}%
+\contentsline {figure}{\numberline {C.20}{\ignorespaces Resultados de la detección de comunidades en 2014.}}{67}{figure.caption.45}%
+\contentsline {figure}{\numberline {C.21}{\ignorespaces Resultados de la detección de comunidades en 2015.}}{68}{figure.caption.46}%
+\contentsline {figure}{\numberline {C.22}{\ignorespaces Resultados de la detección de comunidades en 2016.}}{69}{figure.caption.47}%
+\contentsline {figure}{\numberline {C.23}{\ignorespaces Resultados de la detección de comunidades en 2017.}}{70}{figure.caption.48}%
+\contentsline {figure}{\numberline {C.24}{\ignorespaces Resultados de la detección de comunidades en 2018.}}{71}{figure.caption.49}%
+\contentsline {figure}{\numberline {C.25}{\ignorespaces Resultados de la detección de comunidades en 2019.}}{72}{figure.caption.50}%
+\contentsline {figure}{\numberline {C.26}{\ignorespaces Resultados de la detección de comunidades en 2020.}}{73}{figure.caption.51}%
+\contentsline {figure}{\numberline {C.27}{\ignorespaces Resultados de la detección de comunidades en 2021.}}{74}{figure.caption.52}%
+\contentsline {figure}{\numberline {C.28}{\ignorespaces Resultados de la detección de comunidades en 2022.}}{75}{figure.caption.53}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {D.1}{\ignorespaces Cantidad de vértices por año en la comunidad AGO (Angola).}}{75}{figure.caption.52}%
-\contentsline {figure}{\numberline {D.2}{\ignorespaces Cantidad de vértices por año en la comunidad ARE (Emiratos Árabes Unidos).}}{75}{figure.caption.53}%
-\contentsline {figure}{\numberline {D.3}{\ignorespaces Cantidad de vértices por año en la comunidad ARG (Argentina).}}{75}{figure.caption.54}%
-\contentsline {figure}{\numberline {D.4}{\ignorespaces Cantidad de vértices por año en la comunidad AUS (Australia).}}{76}{figure.caption.55}%
+\contentsline {figure}{\numberline {D.1}{\ignorespaces Cantidad de vértices por año en la comunidad AGO (Angola).}}{76}{figure.caption.54}%
+\contentsline {figure}{\numberline {D.2}{\ignorespaces Cantidad de vértices por año en la comunidad ARE (Emiratos Árabes Unidos).}}{76}{figure.caption.55}%
+\contentsline {figure}{\numberline {D.3}{\ignorespaces Cantidad de vértices por año en la comunidad ARG (Argentina).}}{76}{figure.caption.56}%
+\contentsline {figure}{\numberline {D.4}{\ignorespaces Cantidad de vértices por año en la comunidad AUS (Australia).}}{77}{figure.caption.57}%
