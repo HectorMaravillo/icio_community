@@ -27,10 +27,14 @@ logs/
 
 # ignore auxiliar LaTex files
 *.aux
+*.bbl
 *.bcf
 *.blg
 *.lof
 *.out
+*.run.xml
+*.synctex
+*.synctex(busy)
 *.synctex.gz
 *.toc
-*.synctex
+
