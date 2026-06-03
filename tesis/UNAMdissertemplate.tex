@@ -17,6 +17,10 @@
 % Archivo .bib
 \addbibresource{./references.bib}
 
+% Siglas y abreviaturas
+\usepackage[acronym]{glossaries}
+\makeglossaries
+
 \usepackage{setspace}
 \usepackage{amsfonts} % Fuentes para uso matemático
 \usepackage{amssymb}
@@ -60,6 +64,23 @@
 
 \DeclareMathOperator*{\argmin}{arg\,min}
 \DeclareMathOperator*{\argmax}{arg\,max}
+
+
+\newacronym[
+	description={Organización para la Cooperación y el Desarrollo Económico}
+]{ocde}{OCDE}{Organización para la Cooperación y el Desarrollo Económico}
+\newacronym[
+	description={Tablas insumo-producto inter-países (\textit{Inter--Country Input--Output tables})}
+]{icio}{ICIO}{Tablas insumo-producto inter-países}
+\newacronym[
+	description={Tratado de Libre Comercio de América del Norte}
+]{tlcan}{TLCAN}{Tratado de Libre Comercio de América del Norte (\textit{North American Free Trade Agreement}, \textbf{NAFTA})}
+\newacronym[
+	description={Tratado de Libre Comercio de Canadá y Estados Unidos (\textit{Canada--United States Free Trade Agreement})}
+]{cusfta}{CUSFTA}{Tratado de Libre Comercio de Canadá y Estados Unidos}
+\newacronym[
+	description={Tratado México, Estados Unidos y Canadá (\textit{United States–Mexico–Canada Agreement}, UMSCA)}
+]{tmec}{T-MEC}{Tratado México, Estados Unidos y Canadá}
 
 \begin{document}
 	%------------------------------
@@ -143,6 +164,7 @@
 	
 	\tableofcontents
 	\listoffigures
+	\include{siglas}
 	
 	%\include{resumen}
 	%\include{abstract}
@@ -168,12 +190,12 @@
 		}
 		\include{A3}
 	}
-	{
-	\graphicspath{
-			{../analysis_normalized/images/communities_membership/}
-		}
-		\include{A4}
-	}
+	%{
+	%\graphicspath{
+	%		{../analysis_normalized/images/communities_membership/}
+	%	}
+	%	\include{A4}
+	%}
 	\end{appendices}
 	
     \printbibliography[heading=bibintoc, title={Referencias bibliográficas}]
