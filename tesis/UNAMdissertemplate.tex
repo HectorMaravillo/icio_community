@@ -3,6 +3,20 @@
 \usepackage{bachelorstitlepageUNAM}
 \usepackage{fontspec}
 \usepackage[spanish,es-nodecimaldot,es-tabla]{babel}
+
+% Bibliografía APA (biblatex)
+\usepackage[
+	backend=biber,
+	style=apa,
+	sortcites=true,
+	uniquename=false,
+	language=spanish
+]{biblatex}
+% Para que biblatex-apa use términos en español (ed., pp., etc.)
+\DeclareLanguageMapping{spanish}{spanish-apa}
+% Archivo .bib
+\addbibresource{./references.bib}
+
 \usepackage{setspace}
 \usepackage{amsfonts} % Fuentes para uso matemático
 \usepackage{amssymb}
@@ -36,19 +50,6 @@
 \graphicspath{
 	{../analysis_normalized/images/}
 }
-
-% Bibliografía APA (biblatex)
-\usepackage[
-	backend=biber,
-	style=apa,
-	sortcites=true,
-	uniquename=false
-]{biblatex}
-% Para que biblatex-apa use términos en español (ed., pp., etc.)
-\DeclareLanguageMapping{spanish}{spanish-apa}
-% Archivo .bib
-\addbibresource{./references.bib}
-
 
 \newtheorem{teor}{Teorema}
 \newtheorem{lema}{Lema}
