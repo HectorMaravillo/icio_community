@@ -24,3 +24,13 @@ logs/
 
 # ignore the geopackage files
 *.gpkg
+
+# ignore auxiliar LaTex files
+*.aux
+*.bcf
+*.blg
+*.lof
+*.out
+*.synctex.gz
+*.toc
+*.synctex
