@@ -27,9 +27,14 @@ logs/
 
 # ignore auxiliar LaTex files
 *.aux
+*.acn
+*.acr
+*.alg
 *.bbl
 *.bcf
 *.blg
+*.glsdefs
+*.ist
 *.lof
 *.out
 *.run.xml
