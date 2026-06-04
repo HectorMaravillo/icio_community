@@ -33,6 +33,9 @@ logs/
 *.bbl
 *.bcf
 *.blg
+*.glg
+*.glo
+*.gls
 *.glsdefs
 *.ist
 *.lof
