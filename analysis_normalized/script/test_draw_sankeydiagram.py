@@ -32,6 +32,13 @@ COUNTRY_GROUPS = {
         "DEU", "AUT",  "HRV", "SVN", "HUN", "CZE", "SVK",  "POL",
         "ROU"
         ],
+    "europe": [
+        "LUX", "DEU", "AUT",  "HRV", "SVN", "HUN", "CZE", "SVK",  "POL",
+        "ROU", "BGR", "TUR", "GRC", "CYP", "BLR",  "RUS", "UKR", "LTU", "LVA", "EST",
+        "DNK", "FIN", "NOR", "SWE", "ISL",
+        "NLD", "BEL", "IRL", "GBR", "MLT" 
+        ],
+    "europe2": ["ITA", "CHE", "ESP", "PRT", "FRA"],
     "rusia": ["BGR", "TUR", "GRC", "CYP", "KAZ", "BLR",  "RUS", "UKR", "LTU", "LVA"],
     "baltic": ["DNK", "FIN", "NOR", "SWE", "ISL","EST",  "LTU", "LVA"],
     "france": ["MAR", "FRA", "TUN", "ESP", "PRT"]
@@ -356,36 +363,11 @@ def sankey_membership_by_year(
 #%%
 
 years = range(1995, 2023)
-countries_sel = COUNTRY_GROUPS["north_america"]
+countries_sel = COUNTRY_GROUPS["europe"]
 df = membership_by_year.loc[countries_sel]
 sankey_membership_by_year(
     df,
     years,
     True,
     SAVE_DIR,
-    "north_america")
-
-#%%
-#countries_sel = ["IDN","MYS","PHL","SGP","THA","VNM","KHM","LAO","MMR","BRN", "TWN","HKG"]
-years = (1995, 2000, 2005, 2010, 2015, 2020, 2022)
-countries_sel = COUNTRY_GROUPS["baltic"]
-df = membership_by_year.loc[countries_sel]
-sankey_membership_by_year(
-    df,
-    years,
-    True,
-    SAVE_DIR,
-    "baltic")
-
-
-#%%
-for name, values in COUNTRY_GROUPS.items():
-    countries_sel = values
-    df = membership_by_year.loc[countries_sel]
-    sankey_membership_by_year(
-        df,
-        years,
-        True,
-        SAVE_DIR,
-        name)
-    
+    "europe")
