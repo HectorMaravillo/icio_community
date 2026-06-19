@@ -1,8 +1,13 @@
 \documentclass[letterpaper,12pt,oneside]{book}
-\usepackage[top=25mm, left=30mm, right=25mm, bottom=25mm]{geometry}
+\usepackage[top=25mm,left=30mm, right=25mm, bottom=25mm]{geometry}
 \usepackage{bachelorstitlepageUNAM}
 \usepackage{fontspec}
+%\setmainfont{Verdana}
+\setmainfont{Trebuchet MS}
 \usepackage[spanish,es-nodecimaldot,es-tabla]{babel}
+
+\usepackage{setspace}
+\onehalfspacing
 
 % Bibliografía APA (biblatex)
 \usepackage[
@@ -18,10 +23,9 @@
 \addbibresource{./references.bib}
 
 % Siglas y abreviaturas
-\usepackage[acronym]{glossaries}
+\usepackage[acronym, toc]{glossaries}
 \makeglossaries
 
-\usepackage{setspace}
 \usepackage{amsfonts} % Fuentes para uso matemático
 \usepackage{amssymb}
 \usepackage{amsthm} % Proporciona una versión mejorada del comando \newtheorem 
@@ -53,6 +57,12 @@
 
 \graphicspath{
 	{../analysis_normalized/images/}
+}
+
+\addto\captionsspanish{
+	\renewcommand{\appendixname}{Anexo}
+	\renewcommand{\appendixtocname}{Anexos}
+	\renewcommand{\appendixpagename}{Anexos}
 }
 
 \newtheorem{teor}{Teorema}
@@ -149,11 +159,11 @@
 	
 	\tableofcontents
 	\listoffigures
-	\include{siglas}
 	
 	%\include{resumen}
 	%\include{abstract}
 	\graphicspath{ {Imagenes/} }
+	\include{siglas}
 	
 	\mainmatter
 	\include{Intro}
@@ -165,13 +175,14 @@
 	\appendix
 	\begin{appendices}
 	\include{A1}
-	\include{A2}
+%	\include{A2}
 	{
 		\graphicspath{
 			{../analysis_normalized/images/communities/}
 		}
 		\include{A3}
 	}
+	\include{print_siglas}
 	%{
 	%\graphicspath{
 	%		{../analysis_normalized/images/communities_membership/}
