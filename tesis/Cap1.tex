@@ -187,13 +187,13 @@ Las principales matrices insumo--producto multirregionales son:
  
  \item \textit{International Input--Output Tables} del \gls{ide-jetro}. Esta base de datos está compuesta de tres \gls{mip} multirregionales:
  \begin{itemize}
-  \item \textit{Asian International Input--Output Table, 2005}. Es una \gls{mriot} de 9 países asiáticos y los Estados Unidos y 76 sectores económicos. Considera otros elementos como importaciones y exportaciones a otros países específicos y al resto del mundo, valor agregado, demanda final y discrepancias estadísticas. Existen versiones anteriores de esta tabla, para los años 1985, 1990, 1995 y 2000.
-  \item \textit{Transnational Interregional Input--Output Table for China, Japan and Korea, 2005}. La tabla se conforma de los flujos insumo--producto entre 20 regiones de China, Japón y Corea del Sur, junto con las economías de Taiwán, los Estados Unidos, Hong Kong, y la economía agregada de los países de la \acrfull{asean} y el resto del mundo. En cuanto a las industrias, la tabla incluye dos clasificaciones, con 10 y 15 sectores agregados respectivamente. Además, se reportan otros elementos en la tabla, como subdivisiones del valor agregado y la demanda final, costo de fletes, impuestos a importaciones y discrepancias estadísticas.
+  \item \textit{Asian International Input--Output Table} (AIIOT), 2005. Es una \gls{mriot} de 9 países asiáticos y los Estados Unidos y 76 sectores económicos. Considera otros elementos como importaciones y exportaciones a otros países específicos y al resto del mundo, valor agregado, demanda final y discrepancias estadísticas. Existen versiones anteriores de esta tabla, para los años 1985, 1990, 1995 y 2000.
+  \item \textit{Transnational Interregional Input--Output Table for China, Japan and Korea} (TIIOT-CJK), 2005. La tabla se conforma de los flujos insumo--producto entre 20 regiones de China, Japón y Corea del Sur, junto con las economías nacionales de Taiwán, los Estados Unidos, Hong Kong, y la economía agregada de los países de la \acrfull{asean} y el resto del mundo. En cuanto a las industrias, la tabla incluye dos clasificaciones, con 10 y 15 sectores agregados respectivamente. Además, se reportan otros elementos en la tabla, como subdivisiones del valor agregado y la demanda final, costo de fletes, impuestos a importaciones y discrepancias estadísticas.
   \item \textit{BRICs International Input--Output Table 2005}. Esta tabla incluye los flujos insumo--producto de cada país de los BRICS\footnote{Foro político y económico formado por Brasil, Rusia, India, China y Sudáfrica (hasta 2023).} (excepto Sudáfrica), Japón, los Estados Unidos y la economía agregada de los países de la \acrlong{ue}, así como las importaciones y exportaciones al resto del mundo. Presentan dos clasificaciones de industrias en 7 y 25 sectores agregados \parencite{Meng2013, IDE-JETRO}.
  \end{itemize}
  Estas bases de datos reportan precios corrientes del productor, en miles de dólares estadounidenses. Una de sus desventajas es que sus datos sólo corresponden a años de referencia específicos, a precios corrientes, por lo cual no pueden utilizarse en análisis a lo largo del tiempo \parencite[p.~578]{Timmer2015}.
  
- \item \textit{The Eora Global Supply Chain Database}. Es una base de datos de paga, financiada por el \gls{arc}, que proporciona una serie temporal de tablas insumo--producto, a precios corrientes, con cuentas satélite sociales y ambientales correspondientes a 192 economías y entre 26 y 511 sectores dependiendo del país.  La diferencia entre sectores se debe a que intentan mantener la clasificación sectorial de cada país cuando sea posible. La base de datos contiene series históricas de 1990 a 2022. Dado que considera, prácticamente, a todos los países del mundo no construyen un agregado para el ``resto del mundo''. Existe una versión simplificada, denominada \textit{EORA26}, donde se usa una clasificación común de 26 sectores para todos los países, y las tablas de oferta y utilización del modelo completo se transforman en tablas de oferta y utilización simétricas producto--producto e industria--industria. Este modelo simplificado es más fácil de usar, pero menos preciso \parencite{EORA}. 
+ \item \textit{The Eora Global Supply Chain Database}. Es una base de datos de paga,\footnote{La base fue creada y es mantenida principalmente por investigadores de la Escuela de Física de la Universidad de Sydney Austrialia, bajo financiamiento del \gls{arc} \cite[p.~103]{Miller2022}.} que proporciona una serie temporal de tablas insumo--producto, a precios corrientes, con cuentas satélite sociales y ambientales correspondientes a 192 economías y entre 26 y 511 sectores dependiendo del país.  La diferencia entre sectores se debe a que intentan mantener la clasificación sectorial de cada país cuando sea posible. La base de datos contiene series históricas de 1990 a 2022. Dado que considera, prácticamente, a todos los países del mundo no construyen un agregado para el ``resto del mundo''. Existe una versión simplificada, denominada \textit{EORA26}, donde se usa una clasificación común de 26 sectores para todos los países, y las tablas de oferta y utilización del modelo completo se transforman en tablas de oferta y utilización simétricas producto--producto e industria--industria. Este modelo simplificado es más fácil de usar, pero menos preciso \parencite{EORA}. 
 
  Para su construcción combinan información de cuadros de oferta y utilización, así como tablas industria--industria y mercancía--mercancía de distintos países. La obtención de la \gls{mip} multirregional se realiza mediante estimaciones y el uso de métodos de optimización para asegurar el equilibrio de las tablas, a la vez que se intenta evitar la transformación de los datos originales de cada país, en aras de la transparencia
  \parencite{Lenzen2012, Lenzen2013}.
@@ -208,7 +208,7 @@ El objetivo del equipo que desarrolló este proyecto fue alcanzar el mayor grado
  \item Tablas regionales de insumo producto de la zona euro:
  \begin{itemize}
   \item \textit{European Multi Regional Input Output}. Es una matriz insumo--producto regional de la Unión Europea, que incluye los flujos comerciales entre 272 regiones europeas (\acrshort{nuts}-2)\footnote{La \gls{nuts} es una clasificación jerárquica de 3 niveles, elaborada por la \gls{eurostat} para dividir geográficamente los países de la Unión Europea en regiones y subregiones para fines estadísticos y presupuestales. La \gls{nuts}-2 corresponde a regiones que tienen un rango poblacional entre 800 mil y 3 millones de habitantes \parencite{NUTS}.} y 10 sectores para el periodo 2008--2018 \parencite{Huang2023}.
-  \item \textit{Eurostat's FIGARO input--output tables}. Es una base de datos creada por la \gls{eurostat}, que incluye tablas de insumo producto regional para 45 países (27 de la \gls{ue}), más el resto del mundo, y 64 industrias, para los años 2010--2022, así como componentes de la demanda final y el valor agregado \parencite{FIGARO}.
+  \item \textit{Eurostat's FIGARO\footnote{\textit{Full International and Global Accounts for Research in Input-Output Analysis}.} input--output tables}. Es una base de datos creada por la \gls{eurostat}, que incluye tablas de insumo producto regional para 45 países (27 de la \gls{ue}), más el resto del mundo, y 64 industrias, para los años 2010--2022, así como componentes de la demanda final y el valor agregado \parencite{FIGARO}.
   
   %\item EUREGIO: The Construction of a Global IO Database With Regional Detail for Europe for 2000–2010. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3285818
  \end{itemize}
@@ -227,18 +227,18 @@ En la tabla \ref{tab_MRIOT} se comparan las características de las últimas ver
 OECD--ICIO & 2025 & 81 & 50 & 6 & 1995--2022 \\
 WIOD & 2016 & 43 & 56 & 5 & 2000--2014 \\
 GTAP & v11 & 141 & 65 & -- & 2004, 2007, 2011, 2014, 2017 \\
-IDE--JETRO (Asia) & 2005 & 10 & 76 & 5 & 2005 \\
+AIIOT & 2005 & 10 & 76 & 5 & 2005 \\
 IDE--JETRO (BRICS) & 2005 & 7 & 10, 15 & 5 & 2005 \\
-IDE--JETRO & \multirow{2}{*}{2005} & 7 & \multirow{2}{*}{10, 15} & \multirow{2}{*}{5} & \multirow{2}{*}{2005} \\
-(China, Japón, Korea) &  & (20 regiones) &  &  &  \\
+TIIOT-CJK & 2005 & 7 & 10, 15 & 5 & 2005 \\
 EORA & v199.82 & 190 & 26--511 & 6 & 1990--2022 \\
 ABD--MRIO & 2023 & 62 & 35 & 5 & 2000, 2007--2023 \\
 EXIPOL & -- & 43 & 129 & -- & -- \\
- \multirow{2}{*}{European MRIO} &  \multirow{2}{*}{2023} & 27 &  \multirow{2}{*}{10} &  \multirow{2}{*}{5} &  \multirow{2}{*}{2008--2018} \\
-  & & (272 regiones) & & & \\
+European MRIO &  2023 & 27 & 10 &  5 &  2008--2018\\
 FIGARO & -- & 45 & 64 & 4 & 2010--2022 \\ \hline
 \end{tabular}
 \end{table}
+% TIIOT-CJK - 20 regiones
+% EUROPEAN MRIO 272 regiones
 
 
 La necesidad de armonizar y consolidar datos de diferentes sistemas estadísticos nacionales ha dificultado que los institutos nacionales de estadística y organismos supranacionales contribuyan en la construcción de \gls{mip} multirregionales, con la excepción de la base de datos de la \gls{ocde} \parencite[p.~7]{Tukker2013}. 

@@ -17,20 +17,23 @@ Para construir el conjunto de redes insumo--producto internacional basadas en la
     \end{equation}
     \item Después, se calcula la matriz de proporciones intersectoriales
 	 \begin{equation}
-	 	\textbf{Z}^{'}(t) = \left[\frac{z^t_{ij}}{tot(t)}\right] = \left[ x^t_{ij}\right]
+	 	\tilde{Z}(t) =\left[ \tilde{z}^t_{ij}\right] = \left[\frac{z^t_{ij}}{tot(t)}\right] 
 	 \end{equation}
     dividiendo cada elemento de $\textbf{Z}(t)$ entre $tot(t)$. Los elementos de esta matriz son la proporción de cada flujo intersectorial respecto al total del comercio intermedio de un año específico. De esta forma, se pueden hacer comparaciones históricas sin verse afectadas por las diferencias anuales en los precios corrientes.
     \item Para cada año se construyó una red \gls{icio} $G^{t}=(V^{t}, E^{t}, w^{t})$, tal que:
     \begin{itemize}
         \item El conjunto de vértices $V^{t}$ está constituido por todas las combinaciones de países y sectores económicos, con un total de $n=4,000$ vértices en cada grafo.
-        \item Se establece un arco en $E^{t}$ entre dos vértices $i,j\in V^t$ (incluyendo $i=j$) si su correspondiente proporción en $\textbf{Z}^{'}(t)$ es positiva, es decir, si $x^t_{ij}>0$. %No se consideraron los lazos, es decir, las aristas $e=(i,i), \ i\in V$.
+        \item Se establece un arco en $E^{t}$ entre dos vértices $i,j\in V^t$ (incluyendo $i=j$) si su correspondiente proporción en $\tilde{\textbf{Z}}(t)$ es positiva, es decir, si $\tilde{z}^t_{ij}>0$. %No se consideraron los lazos, es decir, las aristas $e=(i,i), \ i\in V$.
         \item La función de pesos $w^t : E^t \rightarrow (0,1)$
         se define como
      	\begin{equation}
-        	w^t(i,j) := x^t_{ij}
+        	w^t(i,j) := \tilde{z}^t_{ij}
      	\end{equation}
     \end{itemize} 
 \end{itemize}
+
+% Este procedimiento es diferente al clásico "Qualitative input output analysis (QIOA), donde se construye una red no ponderada, estableciendo aristas o arcos entre sectores con un flujo positivo, o superior a un "filtro" (Vease, Miller, 735--738])
+
 
 %En la figura \ref{Fig_RedIcio} se ilustra el proceso de construcción para un modelo con 3 países y 3 sectores.
 
