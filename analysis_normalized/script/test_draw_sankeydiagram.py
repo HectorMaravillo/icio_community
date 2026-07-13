@@ -30,15 +30,18 @@ COUNTRY_GROUPS = {
     "africa_subsaharan": ["CMR","CIV","SEN","NGA","COD","ZAF", "STP","AGO"],
     "europe_deu": [
         "DEU", "AUT",  "HRV", "SVN", "HUN", "CZE", "SVK",  "POL",
-        "ROU"
+        "ROU", 
         ],
+    "europe_nordic": ["DNK", "NOR", "SWE", "FIN", "ISL", "EST", "LVA", "LTU"],
+    "europe_benelux": ["BEL", "NLD", "LUX", "GBR", "IRL", "MLT"],
+    "europe_balcanic": ["GRC","CYP",  "TUR", "BGR"], 
     "europe": [
         "LUX", "DEU", "AUT",  "HRV", "SVN", "HUN", "CZE", "SVK",  "POL",
         "ROU", "BGR", "TUR", "GRC", "CYP", "BLR",  "RUS", "UKR", "LTU", "LVA", "EST",
         "DNK", "FIN", "NOR", "SWE", "ISL",
         "NLD", "BEL", "IRL", "GBR", "MLT" 
         ],
-    "europe2": ["ITA", "CHE", "ESP", "PRT", "FRA"],
+    "europe2": ["ITA", "ESP", "PRT", "FRA"],
     "rusia": ["BGR", "TUR", "GRC", "CYP", "KAZ", "BLR",  "RUS", "UKR", "LTU", "LVA"],
     "baltic": ["DNK", "FIN", "NOR", "SWE", "ISL","EST",  "LTU", "LVA"],
     "france": ["MAR", "FRA", "TUN", "ESP", "PRT"]
@@ -363,11 +366,11 @@ def sankey_membership_by_year(
 #%%
 
 years = range(1995, 2023)
-countries_sel = COUNTRY_GROUPS["europe"]
+countries_sel = COUNTRY_GROUPS["europe_nordic"]
 df = membership_by_year.loc[countries_sel]
 sankey_membership_by_year(
     df,
     years,
     True,
     SAVE_DIR,
-    "europe")
+    "europe_nordic")
