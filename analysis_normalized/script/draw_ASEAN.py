@@ -47,7 +47,7 @@ draw = {
         "regional_maps": False
         }
 
-year = 2007
+year = 2008
 row = best_results.loc[year]
 best_seed  = row["seed"]
 best_initial  = row["initial"]
@@ -73,11 +73,17 @@ partition = VertexClustering(graph = g,
                              membership = p.membership,
                              modularity_params=modularity_params) 
 
-region = ["HKG","VNM","KHM", "MYS","PHL","SGP","THA","LAO", "TWN","IDN", "BRN","MMR"]
 
+region = ["AUT", "BEL", "BGR","BLR", "CHE", "CYP", "CZE", "DEU", "DNK", "ESP", "EST", "FIN", "FRA", "GBR", "GRC", "HRV",
+          "HUN", "IRL", "ISL", "ITA", "LTU", "LUX", "LVA", "MLT", "NLD", "NOR", "POL", "PRT", "ROU", "RUS", "SVK", "SVN", 
+          "SWE", "TUR", "UKR"]
+region = ["COL", "CHL", "ARG", "PER", "BRA"]
+region = ["RUS", "BLR", "UKR", "LTU", "LVA", "KAZ", "BGR", "GRC", "TUR", "CYP", "POL", "EST", "ROU"]
+#region = ["HKG","VNM","KHM", "MYS","PHL","SGP","THA","LAO", "TWN","IDN", "BRN","MMR"]
 community_max = Communities(p, year)
 communities_df = community_max.select()
 
 
 print("Draw communities ...")   
-community_max.draw_map(select = region, pct_threshold=50, static = False)
+community_max.draw_map(select = region, pct_threshold=90, static = False)
+

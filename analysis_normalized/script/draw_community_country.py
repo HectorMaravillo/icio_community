@@ -70,9 +70,10 @@ else:
     
 COUNTRY_ORDER = ["IDN","MYS","PHL","SGP","THA","VNM","KHM","LAO","MMR","BRN", "TWN","HKG"]
 COUNTRY_ORDER = ["CAN", "USA", "MEX"]
-COUNTRY_ORDER = ["DEU", "AUT",  "HRV", "SVN", "HUN", "CZE", "SVK",  "POL", "ROU"]
-COUNTRY_ORDER = ["DNK", "NOR", "SWE", "FIN", "ISL", "EST", "LVA", "LTU"],
-COUNTRY_ORDER = ["BEL", "NLD", "LUX", "GBR", "IRL", "MLT"],
+#COUNTRY_ORDER = ["DEU", "AUT",  "HRV", "SVN", "HUN", "CZE", "SVK",  "POL", "ROU"]
+#COUNTRY_ORDER = ["DNK", "NOR", "SWE", "FIN", "ISL", "EST", "LVA", "LTU"]
+COUNTRY_ORDER = ["BEL", "NLD", "LUX", "GBR", "IRL", "MLT"]
+COUNTRY_ORDER = ["TUR", "GRC" ,"CYP",  "BGR",  "KAZ", "BLR",  "RUS", "UKR", "LVA", "LTU", "EST"]
 country_communities = country_communities.loc[COUNTRY_ORDER]
 
 communities_unique = set(communities_unique)-{nan}

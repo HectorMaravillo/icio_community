@@ -212,7 +212,7 @@ def draw_nodes(g: Graph,
                     showlakes=True,
                     showland=True,
                     oceancolor="rgb(145, 213, 255)",
-                    landcolor="rgb(250, 250, 250)")
+                    landcolor="rgb(230, 230, 230)")
     
 def draw_edges(g: Graph,
                fig: go.Figure,
@@ -264,6 +264,89 @@ def draw_edges(g: Graph,
         ) for v, u, w, c in zip(sources_pos, targets_pos, weights, color_edges)
         #tqdm(zip(sources_pos, targets_pos, weights))
     ]
+    
+def draw_country_labels(fig: go.Figure,
+                        select: list[str] | None = None,
+                        label_type: str = "code") -> None:
+    """
+    Add country labels at their geographic centers.
+
+    Parameters
+    ----------
+    fig : plotly.graph_objects.Figure
+        Plotly figure where labels will be added.
+    select : list of str, optional
+        ISO country codes to display. If None, all countries are displayed.
+    label_type : {'name', 'code'}, optional
+        Text displayed on the map:
+        - 'name': country name, for example 'Angola'.
+        - 'code': ISO code, for example 'AGO'.
+
+    Returns
+    -------
+    None
+    """
+    if select is None:
+        country_codes = list(countries_centers.keys())
+    else:
+        country_codes = list(select)
+
+    # Validate country codes
+    invalid_codes = [
+        code
+        for code in country_codes
+        if code not in countries_centers
+    ]
+
+    if invalid_codes:
+        raise ValueError(
+            f"Country codes not found in countries_centers: "
+            f"{invalid_codes}"
+        )
+
+    if label_type == "name":
+        labels = [
+            countries_names.get(code, code)
+            for code in country_codes
+        ]
+    elif label_type == "code":
+        labels = country_codes
+    else:
+        raise ValueError(
+            "label_type must be either 'name' or 'code'."
+        )
+
+    longitudes = [
+        countries_centers[code][0]
+        for code in country_codes
+    ]
+
+    latitudes = [
+        countries_centers[code][1]
+        for code in country_codes
+    ]
+
+    fig.add_trace(
+        go.Scattergeo(
+            lon=longitudes,
+            lat=latitudes,
+            text=labels,
+            customdata=country_codes,
+            mode="text",
+            textposition="bottom right",
+            textfont=dict(
+                family= "Arial Black",
+                size=9,
+                color="rgb(20, 35, 55)"
+            ),
+            hoverinfo="skip",
+            name="Country labels",
+            legendgroup="country-labels",
+            showlegend=False,
+            visible=True
+        )
+    )
+    
 
 def draw_subgraph_map(subgraph: Graph,
                       label: str,
@@ -309,7 +392,9 @@ def draw_map(g: Graph,
              save_name: str = "",
              pct_threshold: float = None,
              projection: str = "natural earth",
-             static: bool = False) -> None:
+             static: bool = False,
+             show_country_labels: bool = True,
+             country_label_type: str = "code") -> None:
     """
     Create and save an interactive map of the ICIO network.
 
@@ -437,6 +522,15 @@ def draw_map(g: Graph,
             color="gray"
         )
         title = "ICIO: "+str(year)    
+        
+    # Add country names only once, after drawing all subgraphs
+    if show_country_labels:
+        draw_country_labels(
+            fig=fig,
+            select=select,
+            label_type=country_label_type
+        )
+    
     # Update geographic layout parameters
     fig.update_geos(fitbounds = "locations")
     
@@ -450,6 +544,29 @@ def draw_map(g: Graph,
                 'size': 20,
                 'family': 'Arial Black'
             }
+        },
+        legend={
+            "x": 1.000,
+            "xanchor": "left",
+            "y": 0.5,
+            "yanchor": "middle",
+            "orientation": "v",
+            "bgcolor": "rgba(255, 255, 255, 0.85)",
+            "bordercolor": "rgba(80, 80, 80, 0.5)",
+            "borderwidth": 1,
+            "font": {
+                "size": 10
+            },
+            "title": {
+                "text": "Comunidades"
+            },
+            "tracegroupgap": 3
+        },
+        margin={
+            "l": 10,
+            "r": 160,  # Espacio reservado para la leyenda
+            "t": 100,
+            "b": 10
         }
     )
     
