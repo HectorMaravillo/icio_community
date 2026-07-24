@@ -70,10 +70,10 @@ else:
     
 COUNTRY_ORDER = ["IDN","MYS","PHL","SGP","THA","VNM","KHM","LAO","MMR","BRN", "TWN","HKG"]
 COUNTRY_ORDER = ["CAN", "USA", "MEX"]
-#COUNTRY_ORDER = ["DEU", "AUT",  "HRV", "SVN", "HUN", "CZE", "SVK",  "POL", "ROU"]
-#COUNTRY_ORDER = ["DNK", "NOR", "SWE", "FIN", "ISL", "EST", "LVA", "LTU"]
+COUNTRY_ORDER = [ "DEU", "AUT", "CZE", "HUN",  "SVN",  "SVK", "POL", "HRV", "ROU"]
+COUNTRY_ORDER = ["DNK", "NOR", "SWE", "FIN", "ISL", "EST", "LVA", "LTU"]
 COUNTRY_ORDER = ["BEL", "NLD", "LUX", "GBR", "IRL", "MLT"]
-COUNTRY_ORDER = ["TUR", "GRC" ,"CYP",  "BGR",  "KAZ", "BLR",  "RUS", "UKR", "LVA", "LTU", "EST"]
+#COUNTRY_ORDER = ["TUR", "GRC" ,"CYP",  "BGR",  "KAZ", "BLR",  "RUS", "UKR", "LVA", "LTU", "EST"]
 country_communities = country_communities.loc[COUNTRY_ORDER]
 
 communities_unique = set(communities_unique)-{nan}
@@ -122,7 +122,7 @@ ax.tick_params(axis='y', left=False, right=False)
 
 
 # Set legend
-communities_unique = COUNTRY_ORDER
+communities_unique = set(country_communities.to_numpy().ravel())
 community_names = sorted(communities_unique)
 legend_elements = [
     Patch(facecolor=colors[country], edgecolor=None, label=country)

@@ -26,7 +26,7 @@ COUNTRY_GROUPS = {
     "asia": ["CHN","HKG","VNM","KHM", "MYS","PHL","SGP","THA","LAO", "TWN","IDN", "BRN","MMR",
              "BGD","PAK","JPN","KOR","SAU", "ARE", "IND"],
     "north_america": ["CAN", "USA","MEX"],
-    "south_america": ["BRA","ARG","CHL","PER", "COL","CRI"],
+    "south_america": ["BRA","ARG","CHL","PER", "COL"],
     "africa_subsaharan": ["CMR","CIV","SEN","NGA","COD","ZAF", "STP","AGO"],
     "europe_deu": [
         "DEU", "AUT",  "HRV", "SVN", "HUN", "CZE", "SVK",  "POL",
@@ -365,11 +365,11 @@ def sankey_membership_by_year(
 #%%
 
 years = range(1995, 2023)
-countries_sel = COUNTRY_GROUPS["europe_rusia"]
+countries_sel = COUNTRY_GROUPS["south_america"]
 df = membership_by_year.loc[countries_sel]
 sankey_membership_by_year(
     df,
     years,
     True,
     SAVE_DIR,
-    "europe_rusia")
+    "south_america")
