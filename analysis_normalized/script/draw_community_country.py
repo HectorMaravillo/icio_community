@@ -74,6 +74,7 @@ COUNTRY_ORDER = [ "DEU", "AUT", "CZE", "HUN",  "SVN",  "SVK", "POL", "HRV", "ROU
 COUNTRY_ORDER = ["DNK", "NOR", "SWE", "FIN", "ISL", "EST", "LVA", "LTU"]
 COUNTRY_ORDER = ["BEL", "NLD", "LUX", "GBR", "IRL", "MLT"]
 COUNTRY_ORDER =  ["RUS", "BLR", "UKR", "BGR",   "CYP", "GRC", "TUR"]
+COUNTRY_ORDER =  ["BRA", "ARG", "CHL", "PER", "COL"]
 #COUNTRY_ORDER = ["TUR", "GRC" ,"CYP",  "BGR",  "KAZ", "BLR",  "RUS", "UKR", "LVA", "LTU", "EST"]
 country_communities = country_communities.loc[COUNTRY_ORDER]
 
