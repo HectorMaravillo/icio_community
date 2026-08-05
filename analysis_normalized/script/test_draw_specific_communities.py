@@ -22,8 +22,13 @@ icio = ICIO_Network(year,
                     diagonal =True,
                     diagonal_country=True)
 #%%%
-#selection = ["MEX", "USA", "CAN"]
-selection = ["VNM","KHM", "MYS","PHL","SGP","THA","LAO", "IDN", "BRN","MMR"]
+selection = ["MEX", "USA", "CAN"]
+#selection = ["IDN","MYS","PHL","SGP","THA","VNM","KHM","LAO","MMR","BRN", "TWN","HKG"]
+#selection = ["DEU", "AUT", "CZE", "HUN",  "SVN",  "SVK", "POL", "HRV", "ROU"]
+#selection = ["DNK", "NOR", "SWE", "FIN", "ISL", "EST", "LVA", "LTU"]
+#selection = ["BEL", "NLD", "LUX", "GBR", "IRL", "MLT"]
+selection = ["RUS", "BLR", "UKR", "BGR",   "CYP", "GRC", "TUR"]
+selection =  ["BRA", "ARG", "CHL", "PER", "COL"]
 g = icio.g
 select_nodes = [v.index for v in g.vs if v["country"] in selection]
 g_sub = g.induced_subgraph(select_nodes)
@@ -35,7 +40,7 @@ community = Communities(p, year)
 
 strength = "out"
 by = "country"
-percentil = 98
+percentil = 95
 draw_subgraph_network(community, 0,
                       path_save = None,
                       save_name = None, 
