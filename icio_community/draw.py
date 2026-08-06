@@ -741,7 +741,8 @@ def draw_subgraph_network(communities, i,
                           percentil = 99,
                           niter=50,
                           width=600,
-                          height=600):
+                          height=600,
+                          show_country_labels=False):
     # Filtrar subgrafica
     sub_g = communities.p.subgraphs()[i]
     
@@ -809,7 +810,7 @@ def draw_subgraph_network(communities, i,
     edge_trace_interntl = go.Scatter(
         x=x_interntl, y=y_interntl,
         mode='lines',
-        line=dict(width=0.8, color='red'),
+        line=dict(width=0.8, color="indianred"),
         opacity = 0.9,
         hoverinfo='none',
         showlegend=True,
@@ -849,6 +850,35 @@ def draw_subgraph_network(communities, i,
             showlegend=True
         )
         fig.add_trace(scatter)
+    
+    # Colocar el nombre de cada país en el centroide de sus vértices
+    if show_country_labels:
+        for country_code in sorted(set(sub_g.vs["country"])):
+            country_indices = [
+                idx
+                for idx, code in enumerate(sub_g.vs["country"])
+                if code == country_code
+            ]
+
+            centroid_x = x[country_indices].mean()
+            centroid_y = y[country_indices].mean()
+
+            fig.add_trace(
+                go.Scatter(
+                    x=[centroid_x],
+                    y=[centroid_y],
+                    mode="text",
+                    text=[country_code],
+                    textposition="middle center",
+                    textfont=dict(
+                        size=9,
+                        color="rgb(20, 35, 55)",
+                        family="Arial Black"
+                    ),
+                    hoverinfo="skip",
+                    showlegend=False
+                )
+            )
     
     fig.update_layout(
           xaxis=dict(showgrid=False, zeroline=False, visible=False, scaleanchor="x"),

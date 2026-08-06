@@ -65,6 +65,17 @@ En conjunto, los resultados muestran la consolidación progresiva de un bloque p
 
 La permanencia de Alemania como líder dentro de la comunidad de Europa central coincide con la literatura que identifica a Alemania como el centro industrial de la denominada \textit{Factory Europe}, desde el cual se articula la producción y se redirigen las exportaciones de las economías de Europa central y oriental hacia mercados fuera de Europa, principalmente hacia Estados Unidos, Rusia y China \parencite{KordalskaOlczyk2019}. Esta interpretación también se refleja en la figura \ref{Mapa_Comunidades_Europa}, donde, en 2008 y 2022, los flujos comerciales más intensos dentro de la comunidad conectan a la economía alemana principalmente con las economías checa, austriaca y polaca y, en menor medida, con las de Hungría y Eslovaquia.
 
+En la figura \ref{Subgraph_deu}, que presenta la subgráfica inducida por los países de Europa central en 2022, tanto la posición de Alemania, obtenida mediante el algoritmo de Fruchterman--Reingold (véase el anexo \ref{anexo5}), como el tamaño de sus vértices refuerzan el argumento sobre el papel central que desempeña la economía alemana en la región. Asimismo, se observa cierto equilibrio entre los flujos comerciales intrarregionales y los internos, particularmente en las relaciones entre los sectores económicos de Alemania, Austria, Polonia, República Checa, Hungría y Rumanía. Estos flujos no solo se dirigen hacia Alemania, sino que también conectan a dichas economías entre sí. En contraste, Croacia parece presentar un menor grado de cohesión con el bloque subregional.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{subgraphs/deu_subrgraph.png}
+	\caption{Subgráfica inducida por los vértices de los países de Europa central.$^{*}$}
+	\label{Subgraph_deu}
+	
+	\caption*{\footnotesize $^{*}$ El tamaño de cada vértice representa su fuerza de salida; su posición se obtiene mediante el algoritmo de Fruchterman--Reingold (500 iteraciones); y su color identifica el país al que pertenece, no su comunidad. Solo se presentan las aristas cuyo peso supera el percentil 95 de la distribución regional. Las aristas grises representan transacciones domésticas y las de color coral, flujos comerciales internacionales.}
+\end{figure}
+
 Otro ejemplo de una comunidad estable identificada en Europa es el caso de los países nórdicos y bálticos. Esta comunidad inicia agrupando las economías de los países nórdicos (Dinamarca, Noruega, Finlandia y Suecia), así como los sectores de Estonia e Islandia. Todos estos países se mantienen dentro de la comunidad durante todo el periodo estudiado. La comunidad es identificada con la economía de Suecia debido a que es el país con el sector con el mayor flujo comercial de salida dentro de la comunidad. A partir de 2007,  la economía de Lituania comienza a aparecer enlazada a este bloque (con la excepción de los años 2008, 2012 y 2014); y Letonia sigue este camino desde 2015. Antes de eso, ambos países bálticos habían aparecido consistentemente dentro de la comunidad encabezada por la economía rusa, pese a haber ingresado a la Unión Europea en 2004. Finalmente, en 2022 el bloque productivo de los países nórdicos y bálticos parece fusionarse junto a la comunidad de Bélgica y Países Bajos. La evolución detallada de esta comunidad se muestra en la figura \ref{DiagramaSankey_Europa_Nordica}. 
 
 \begin{figure}[H]
@@ -119,7 +130,7 @@ A finales de la década de 1990, el bloque productivo encabezado por la Federaci
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{images/communities_membership/RUS.png}
+	\includegraphics[width=.9\linewidth]{images/communities_membership/RUS.png}
 	\caption{Cantidad de sectores económicos (vértices) por año en la comunidad RUS (Rusia).}
 	\label{RUS_timeline}
 \end{figure}

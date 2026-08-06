@@ -46,6 +46,19 @@ Los resultados de la detección de comunidades reflejan un bajo nivel de integra
 	\label{DiagramaSankey_TLCAN}
 \end{figure}
 
+
+La figura \ref{Subgraph_TMEC} ilustra el grado de interdependencia productiva entre Canadá, Estados Unidos y México en 2022. Destaca la asimetría en la densidad de las aristas de mayor peso asociadas a los mercados internos (color gris): estas se concentran principalmente en Estados Unidos, en contraste con Canadá y México. Además, los flujos comerciales intrarregionales más intensos, representados mediante aristas de color coral, se observan principalmente entre Canadá y Estados Unidos, así como entre Estados Unidos y México; en cambio, no se aprecia un vínculo productivo fuerte entre México y Canadá. Estas características podrían explicar por qué el algoritmo de Leiden no agrupa a las tres economías en un único bloque productivo regional, sino que las asigna a comunidades individuales.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{subgraphs/tmec_subrgraph.png}
+	\caption{Subgráfica inducida por los vértices de México, Estados Unidos y Canadá (2022).$^{*}$}
+	\label{Subgraph_TMEC}
+	
+		\caption*{\footnotesize $^{*}$ El tamaño de cada vértice representa su fuerza de salida; su posición se obtiene mediante el algoritmo de Fruchterman--Reingold (500 iteraciones); y su color identifica el país al que pertenece, no su comunidad. Solo se presentan las aristas cuyo peso supera el percentil 95 de la distribución regional. Las aristas grises representan transacciones domésticas y las de color coral, flujos comerciales internacionales.}
+\end{figure}
+
+
 % C24B (Metales preciosos basicos y otros metales no ferrosos) Canadá 1995-1996, 1999-2000 En EU
 % B06 Extraccion de crudo Canadá 1998-2004 y 2022 EU
 % B06 Extracción de crudo México 2022 en EU

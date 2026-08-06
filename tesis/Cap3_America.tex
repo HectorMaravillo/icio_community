@@ -75,6 +75,17 @@ A nivel sectorial, los únicos casos de integración en comunidades externas a l
 	\label{ComunidadesPorPais_Sudamerica}
 \end{figure}
 
+Por último, la figura \ref{Subgraph_sudamerica} presenta la subgráfica inducida por los sectores de los cinco países sudamericanos considerados en el estudio. La posición de los vértices, obtenida mediante 500 iteraciones del algoritmo de Fruchterman--Reingold, muestra que los sectores de un mismo país tienden a ubicarse próximos entre sí y relativamente alejados de los pertenecientes a otros países. A su vez, entre las aristas de mayor peso de la región se observa una marcada preponderancia de las transacciones internas frente a los flujos intrarregionales. Ambos elementos sugieren un bajo grado de integración productiva regional en comparación con el observado en otras regiones, como el sudeste asiático y Europa central.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{subgraphs/sudamerica_subgraph.png}
+	\caption{Subgráfica inducida por los vértices de Brasil, Argentina, Chile, Colombia y Perú.$^{*}$}
+	\label{Subgraph_sudamerica}
+	
+		\caption*{\footnotesize $^{*}$ El tamaño de cada vértice representa su fuerza de salida; su posición se obtiene mediante el algoritmo de Fruchterman--Reingold (500 iteraciones); y su color identifica el país al que pertenece, no su comunidad. Solo se presentan las aristas cuyo peso supera el percentil 95 de la distribución regional. Las aristas grises representan transacciones domésticas y las de color coral, flujos comerciales internacionales.}
+\end{figure}
+
 %\begin{figure}[H]
 %	\centering
 %	\begin{subfigure}{.9\textwidth}

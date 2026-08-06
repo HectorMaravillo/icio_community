@@ -69,6 +69,20 @@ La dinámica de las comunidades identificadas permite establecer cuatro periodos
 
 La figura \ref{Mapa_Comunidades_ASEAN} muestra el mapa de las comunidades en el sudoeste asiático en tres momentos: 1995, 2008 y 2022. Destaca la intensidad de los flujos comerciales entre Taiwán, Tailandia, Malasia y Singapur, los cuales abarcan a la mayoría de los sectores económicos de estos países. Además, dichos flujos presentan una distribución relativamente equilibrada entre los distintos socios comerciales. Esto refleja la profunda interdependencia económica que se ha formado entre estas economías.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{subgraphs/asean_subgraph.png}
+	\caption{Subgráfica inducida por los vértices de los páises de la \gls{asean}, Taiwan y Hong Kong (2022).$^{*}$}
+	\label{Subgraph_ASEAN}
+	
+	\caption*{\footnotesize $^{*}$ El tamaño de cada vértice representa su fuerza de salida; su posición se obtiene mediante el algoritmo de Fruchterman--Reingold (500 iteraciones); y su color identifica el país al que pertenece, no su comunidad. Solo se presentan las aristas cuyo peso supera el percentil 95 de la distribución regional. Las aristas grises representan transacciones domésticas y las de color coral, flujos comerciales internacionales.}
+\end{figure}
+
+Por último, la figura \ref{Subgraph_ASEAN} presenta la subgráfica inducida por los países de la \gls{asean}, Taiwán y Hong Kong, independientemente de la comunidad a la que pertenezca cada vértice. El tamaño de cada vértice depende de su fuerza de salida; su color, del país al que pertenece; y su distribución espacial, de la aplicación del algoritmo de Fruchterman--Reingold (véase el anexo \ref{anexo5}). Únicamente se muestra el 5\% de las aristas con mayor peso de la región. Las transacciones domésticas se representan en gris y las internacionales, en coral. La figura muestra la existencia de fuertes vínculos intersectoriales en la región, principalmente entre Indonesia, Taiwán, Vietnam, Tailandia, Filipinas, Singapur y Malasia. A estos les siguen Hong Kong, Camboya y Laos y, en último lugar, Brunéi. Además, los flujos comerciales intrarregionales más intensos parecen mantener un equilibrio con los flujos comerciales internos.
+
+
+
+
 \begin{figure}[H] 
 	\centering
 	\begin{subfigure}{.9\textwidth}
@@ -91,6 +105,9 @@ La figura \ref{Mapa_Comunidades_ASEAN} muestra el mapa de las comunidades en el 
 	
 	\caption*{\footnotesize $^{*}$ Los sectores económicos se disponen circularmente alrededor del centro del país al que pertenecen y se ordenan en el sentido de las manecillas del reloj. El color de cada sector indica la comunidad a la que pertenece. Las aristas representan únicamente los flujos comerciales cuya magnitud supera el percentil 50 de la distribución regional, y su grosor es proporcional a la intensidad de cada flujo.}
 \end{figure}
+
+
+
 
 %Extraccion de mienrales metalicos Filipinas - Japon 1995, 1996, 97, 98
 
