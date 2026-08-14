@@ -241,26 +241,26 @@
 <body>
   <header class="page-header">
     <div class="header-inner">
-      <h1>Visualizaciones ICIO-OECD</h1>
+      <h1>Detección de comunidades en la red de insumo-producto internacional (ICIO-OCDE) 1995-2022.</h1>
       <p class="lead">
-        Índice de visualizaciones de redes y estructuras regionales para el periodo 1995–2022.
-        Selecciona una visualización para abrirla en una nueva pestaña.
+        Índice de visualizaciones interactivas correspondientes a la tesis "Detección de comunidades en la red insumo-producto internacional (1995-2022): Una aproximación a la integración productiva regional".
       </p>
 
       <nav class="section-nav" aria-label="Secciones del índice">
         <a href="#maps">Mapas</a>
         <a href="#sankey">Diagramas de Sankey</a>
-        <a href="#subgraphs">Subgrafos</a>
+        <a href="#subgraphs">Subgráficas regionales</a>
       </nav>
     </div>
   </header>
 
   <main>
     <section class="section-card" id="maps">
-      <h2>Mapas 1995–2022</h2>
+      <h2>Mapa de comunidades</h2>
       <p class="section-description">
-        Mapas anuales de la red. Selecciona un año para abrir el archivo correspondiente
-        de la carpeta <code>maps</code>.
+        Mapas anuales (1995-2022) de las comunidades detectadas en la red insumo-producto internacional (ICIO-OECD).
+        El color de cada nodo indica la comunidad a la que pertenece el sector económico correspondiente y únicamente se muestran las aristas intracomunitarias.
+        Selecciona un año para abrir el mapa correspondiente.
       </p>
       <div class="link-grid" id="map-list" aria-label="Mapas por año"></div>
     </section>
@@ -268,8 +268,9 @@
     <section class="section-card" id="sankey">
       <h2>Diagramas de Sankey</h2>
       <p class="section-description">
-        Diagramas regionales de Sankey que resumen los principales flujos entre países
-        de cada agrupación.
+        Diagramas de Sankey de los flujos en la pertenencia a comunidades entre los sectores económicos de los países en cada región durante el periodo 1995-2022.
+        El color en cada bloque indica la comunidad a la que pertenece un sector económico.
+        Selecciona una región para abrir el diagrama correspondiente.
       </p>
 
       <div class="link-grid sankey-grid" aria-label="Diagramas de Sankey por región">
@@ -277,18 +278,20 @@
         <a class="file-link" href="sankey_diagrams/asean.html" target="_blank" rel="noopener noreferrer">Sudeste asiático (ASEAN)</a>
         <a class="file-link" href="sankey_diagrams/europe_benelux.html" target="_blank" rel="noopener noreferrer">Europa noroccidental</a>
         <a class="file-link" href="sankey_diagrams/europe_deu.html" target="_blank" rel="noopener noreferrer">Europa central</a>
-        <a class="file-link" href="sankey_diagrams/europe_nordic.html" target="_blank" rel="noopener noreferrer">Países nórdicos</a>
+        <a class="file-link" href="sankey_diagrams/europe_nordic.html" target="_blank" rel="noopener noreferrer">Países nórdicos y bálticos</a>
         <a class="file-link" href="sankey_diagrams/europe_rusia.html" target="_blank" rel="noopener noreferrer">Europa del Este y los Balcanes</a>
-        <a class="file-link" href="sankey_diagrams/north_america.html" target="_blank" rel="noopener noreferrer">Norteamérica (TMEC)</a>
+        <a class="file-link" href="sankey_diagrams/north_america.html" target="_blank" rel="noopener noreferrer">Norteamérica</a>
         <a class="file-link" href="sankey_diagrams/south_america.html" target="_blank" rel="noopener noreferrer">Sudamérica</a>
       </div>
     </section>
 
     <section class="section-card" id="subgraphs">
-      <h2>Subgrafos regionales</h2>
+      <h2>Subgráficas regionales</h2>
       <p class="section-description">
+        Subgráfico inducido por los sectores económicos de los países de una región. 
+        El color indica al país al que pertenece el sector económico.
+        Las aristas grisis representan flujos intrasectoriales domésticos y las aristas rojas, flujos internacionales.
         Selecciona un año y después abre el subgrafo de la región de interés.
-        Cada enlace conduce al archivo correspondiente de la carpeta <code>subgraphs</code>.
       </p>
 
       <div class="controls">
@@ -324,10 +327,10 @@
       { file: "asean", label: "Sudeste asiático (ASEAN)" },
       { file: "europe_benelux", label: "Europa noroccidental" },
       { file: "europe_central", label: "Europa central" },
-      { file: "nordic", label: "Países nórdicos" },
+      { file: "nordic", label: "Países nórdicos y bálticos" },
       { file: "rusia", label: "Europa del Este y los Balcanes" },
       { file: "southamerica", label: "Sudamérica" },
-      { file: "tmec", label: "Norteamérica (TMEC)" }
+      { file: "tmec", label: "Norteamérica" }
     ];
 
     function createFileLink(href, label) {
