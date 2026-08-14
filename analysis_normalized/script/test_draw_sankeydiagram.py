@@ -27,7 +27,7 @@ COUNTRY_GROUPS = {
 #             "BGD","PAK","JPN","KOR","SAU", "ARE", "IND"],
     "north_america": ["CAN", "USA","MEX"],
     "south_america": ["BRA","ARG","CHL","PER", "COL"],
-#    "africa_subsaharan": ["CMR","CIV","SEN","NGA","COD","ZAF", "STP","AGO"],
+    "africa_subsaharan": ["CMR","CIV","SEN","NGA","COD","ZAF", "STP","AGO"],
     "europe_deu": [
         "DEU", "AUT",  "HRV", "SVN", "HUN", "CZE", "SVK",  "POL", "ROU", 
         ],

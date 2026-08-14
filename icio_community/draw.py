@@ -803,7 +803,7 @@ def draw_subgraph_network(communities, i,
         opacity = 0.9,
         hoverinfo='none',
         showlegend=True,
-        visible="legendonly",
+    #    visible="legendonly",
         name="Domestic trade"
     )
     # Crear traza de aristas internacionales
