@@ -3,69 +3,371 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mapas 1995–2022</title>
+  <meta name="description" content="Índice de visualizaciones ICIO-OECD: mapas, diagramas de Sankey y subgrafos para 1995–2022.">
+  <title>Visualizaciones ICIO-OECD | 1995–2022</title>
+
   <style>
+    :root {
+      --bg: #f4f6f8;
+      --surface: #ffffff;
+      --surface-soft: #f8fafc;
+      --text: #172033;
+      --muted: #5f6b7a;
+      --border: #d9e0e7;
+      --accent: #1769aa;
+      --accent-dark: #0f4f85;
+      --shadow: 0 8px 24px rgba(23, 32, 51, 0.07);
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background: #f7f7f7;
-      color: #222;
-    }
-
-    h1 {
-      margin-bottom: 8px;
-    }
-
-    p {
-      margin-top: 0;
-      color: #555;
-    }
-
-    ul {
-      columns: 3;
-      -webkit-columns: 3;
-      -moz-columns: 3;
-      list-style: none;
-      padding: 0;
-      margin-top: 24px;
-    }
-
-    li {
-      margin: 8px 0;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
     }
 
     a {
-      text-decoration: none;
-      color: #0366d6;
+      color: var(--accent);
     }
 
-    a:hover {
-      text-decoration: underline;
+    .page-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner,
+    main,
+    footer {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .header-inner {
+      padding: 46px 0 36px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .lead {
+      max-width: 780px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .section-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .section-nav a {
+      display: inline-block;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface-soft);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .section-nav a:hover,
+    .section-nav a:focus-visible {
+      border-color: var(--accent);
+      background: #eef6fc;
+      outline: none;
+    }
+
+    main {
+      padding: 34px 0 50px;
+    }
+
+    .section-card {
+      margin-bottom: 28px;
+      padding: 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .section-card h2 {
+      margin: 0 0 7px;
+      font-size: 1.55rem;
+    }
+
+    .section-description {
+      margin: 0 0 22px;
+      max-width: 820px;
+      color: var(--muted);
+    }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 10px;
+    }
+
+    .file-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: var(--surface-soft);
+      text-decoration: none;
+      font-weight: 600;
+      text-align: center;
+      transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+    }
+
+    .file-link:hover,
+    .file-link:focus-visible {
+      border-color: var(--accent);
+      background: #eef6fc;
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .sankey-grid,
+    .subgraph-grid {
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: 700;
+    }
+
+    select {
+      min-width: 180px;
+      padding: 10px 38px 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--text);
+      font: inherit;
+    }
+
+    select:focus {
+      border-color: var(--accent);
+      outline: 2px solid rgba(23, 105, 170, 0.15);
+      outline-offset: 1px;
+    }
+
+    .selection-status {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .subgraph-grid[hidden] {
+      display: none;
+    }
+
+    footer {
+      padding: 0 0 38px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .header-inner,
+      main,
+      footer {
+        width: min(100% - 24px, 1120px);
+      }
+
+      .header-inner {
+        padding: 32px 0 26px;
+      }
+
+      main {
+        padding-top: 22px;
+      }
+
+      .section-card {
+        padding: 20px;
+      }
+
+      .link-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .sankey-grid,
+      .subgraph-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .controls {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      select {
+        width: 100%;
+      }
     }
   </style>
 </head>
-<body>
-  <h1>Mapas 1995–2022</h1>
-  <p>Selecciona un año para abrir el mapa correspondiente.</p>
 
-  <ul id="map-list"></ul>
+<body>
+  <header class="page-header">
+    <div class="header-inner">
+      <h1>Visualizaciones ICIO-OECD</h1>
+      <p class="lead">
+        Índice de visualizaciones de redes y estructuras regionales para el periodo 1995–2022.
+        Selecciona una visualización para abrirla en una nueva pestaña.
+      </p>
+
+      <nav class="section-nav" aria-label="Secciones del índice">
+        <a href="#maps">Mapas</a>
+        <a href="#sankey">Diagramas de Sankey</a>
+        <a href="#subgraphs">Subgrafos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-card" id="maps">
+      <h2>Mapas 1995–2022</h2>
+      <p class="section-description">
+        Mapas anuales de la red. Selecciona un año para abrir el archivo correspondiente
+        de la carpeta <code>maps</code>.
+      </p>
+      <div class="link-grid" id="map-list" aria-label="Mapas por año"></div>
+    </section>
+
+    <section class="section-card" id="sankey">
+      <h2>Diagramas de Sankey</h2>
+      <p class="section-description">
+        Diagramas regionales de Sankey que resumen los principales flujos entre países
+        de cada agrupación.
+      </p>
+
+      <div class="link-grid sankey-grid" aria-label="Diagramas de Sankey por región">
+        <a class="file-link" href="sankey_diagrams/africa_subsaharan.html" target="_blank" rel="noopener noreferrer">África</a>
+        <a class="file-link" href="sankey_diagrams/asean.html" target="_blank" rel="noopener noreferrer">Sudeste asiático (ASEAN)</a>
+        <a class="file-link" href="sankey_diagrams/europe_benelux.html" target="_blank" rel="noopener noreferrer">Europa noroccidental</a>
+        <a class="file-link" href="sankey_diagrams/europe_deu.html" target="_blank" rel="noopener noreferrer">Europa central</a>
+        <a class="file-link" href="sankey_diagrams/europe_nordic.html" target="_blank" rel="noopener noreferrer">Países nórdicos</a>
+        <a class="file-link" href="sankey_diagrams/europe_rusia.html" target="_blank" rel="noopener noreferrer">Europa del Este y los Balcanes</a>
+        <a class="file-link" href="sankey_diagrams/north_america.html" target="_blank" rel="noopener noreferrer">Norteamérica (TMEC)</a>
+        <a class="file-link" href="sankey_diagrams/south_america.html" target="_blank" rel="noopener noreferrer">Sudamérica</a>
+      </div>
+    </section>
+
+    <section class="section-card" id="subgraphs">
+      <h2>Subgrafos regionales</h2>
+      <p class="section-description">
+        Selecciona un año y después abre el subgrafo de la región de interés.
+        Cada enlace conduce al archivo correspondiente de la carpeta <code>subgraphs</code>.
+      </p>
+
+      <div class="controls">
+        <label for="year-select">Año:</label>
+        <select id="year-select" aria-describedby="selection-status">
+          <option value="" selected>Selecciona un año</option>
+        </select>
+      </div>
+
+      <p class="selection-status" id="selection-status">
+        Selecciona un año para mostrar los subgrafos disponibles.
+      </p>
+
+      <div class="link-grid subgraph-grid" id="subgraph-list" aria-label="Subgrafos por región" hidden></div>
+    </section>
+  </main>
+
+  <footer>
+    ICIO-OECD · Visualizaciones 1995–2022
+  </footer>
 
   <script>
-    const list = document.getElementById("map-list");
+    const startYear = 1995;
+    const endYear = 2022;
 
-    for (let year = 1995; year <= 2022; year++) {
-      const filename = `${year}_thr99_natural earth.html`;
+    const mapList = document.getElementById("map-list");
+    const yearSelect = document.getElementById("year-select");
+    const subgraphList = document.getElementById("subgraph-list");
+    const selectionStatus = document.getElementById("selection-status");
 
-      const li = document.createElement("li");
-      const a = document.createElement("a");
+    const subgraphRegions = [
+      { file: "africa_subsaharan", label: "África" },
+      { file: "asean", label: "Sudeste asiático (ASEAN)" },
+      { file: "europe_benelux", label: "Europa noroccidental" },
+      { file: "europe_central", label: "Europa central" },
+      { file: "nordic", label: "Países nórdicos" },
+      { file: "rusia", label: "Europa del Este y los Balcanes" },
+      { file: "southamerica", label: "Sudamérica" },
+      { file: "tmec", label: "Norteamérica (TMEC)" }
+    ];
 
-      a.href = `maps/${filename}`;
-      a.textContent = year;
-      a.target = "_blank";
-
-      li.appendChild(a);
-      list.appendChild(li);
+    function createFileLink(href, label) {
+      const link = document.createElement("a");
+      link.className = "file-link";
+      link.href = href;
+      link.textContent = label;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      return link;
     }
+
+    for (let year = startYear; year <= endYear; year++) {
+      const mapHref = `maps/${year}_thr99_natural%20earth.html`;
+      mapList.appendChild(createFileLink(mapHref, year));
+
+      const option = document.createElement("option");
+      option.value = year;
+      option.textContent = year;
+      yearSelect.appendChild(option);
+    }
+
+    yearSelect.addEventListener("change", () => {
+      const year = yearSelect.value;
+      subgraphList.replaceChildren();
+
+      if (!year) {
+        subgraphList.hidden = true;
+        selectionStatus.textContent = "Selecciona un año para mostrar los subgrafos disponibles.";
+        return;
+      }
+
+      subgraphRegions.forEach(({ file, label }) => {
+        const href = `subgraphs/${year}_${file}_95_net.html`;
+        subgraphList.appendChild(createFileLink(href, label));
+      });
+
+      subgraphList.hidden = false;
+      selectionStatus.textContent = `Subgrafos disponibles para ${year}:`;
+    });
   </script>
 </body>
 </html>
