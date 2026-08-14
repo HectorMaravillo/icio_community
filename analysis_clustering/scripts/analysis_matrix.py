@@ -65,16 +65,16 @@ def compute_distance_matrices(matrices, distance):
 # MAIN
 # ===========================================================
 
-distance = lambda a, b: jensenshannon(
-    a.ravel(),
-    b.ravel(),
-    base=2)
-distance_name = "JS"
+#distance = lambda a, b: jensenshannon(
+#    a.ravel(),
+#    b.ravel(),
+#    base=2)
+#distance_name = "JS"
 
 distance = lambda a, b: np.linalg.norm(a - b, ord="fro")
 distance_name = "Frobenius"
 
-for year in range(1995, 1997):
+for year in range(1995, 2023):
     print(f"Year: {year}")
     print("Importing data...")
     matrices = import_national_matrices(year)

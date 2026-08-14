@@ -23,33 +23,30 @@ countries_names["STP"] = "Saõ Tomé\nand Príncipe"
 
 COUNTRY_GROUPS = {
     "asean": ["IDN","MYS","PHL","SGP","THA","VNM","KHM","LAO","MMR","BRN"],
-    "asia": ["CHN","HKG","VNM","KHM", "MYS","PHL","SGP","THA","LAO", "TWN","IDN", "BRN","MMR",
-             "BGD","PAK","JPN","KOR","SAU", "ARE", "IND"],
+#    "asia": ["CHN","HKG","VNM","KHM", "MYS","PHL","SGP","THA","LAO", "TWN","IDN", "BRN","MMR",
+#             "BGD","PAK","JPN","KOR","SAU", "ARE", "IND"],
     "north_america": ["CAN", "USA","MEX"],
     "south_america": ["BRA","ARG","CHL","PER", "COL"],
-    "africa_subsaharan": ["CMR","CIV","SEN","NGA","COD","ZAF", "STP","AGO"],
+#    "africa_subsaharan": ["CMR","CIV","SEN","NGA","COD","ZAF", "STP","AGO"],
     "europe_deu": [
-        "DEU", "AUT",  "HRV", "SVN", "HUN", "CZE", "SVK",  "POL",
-        "ROU", 
+        "DEU", "AUT",  "HRV", "SVN", "HUN", "CZE", "SVK",  "POL", "ROU", 
         ],
     "europe_nordic": ["DNK", "NOR", "SWE", "FIN", "ISL", "EST", "LVA", "LTU"],
     "europe_benelux": ["BEL", "NLD", "LUX", "GBR", "IRL", "MLT"],
-    "europe_balcanic": ["GRC","CYP",  "TUR", "BGR"], 
-    "europe": [
-        "LUX", "DEU", "AUT",  "HRV", "SVN", "HUN", "CZE", "SVK",  "POL",
-        "ROU", "BGR", "TUR", "GRC", "CYP", "BLR",  "RUS", "UKR", "LTU", "LVA", "EST",
-        "DNK", "FIN", "NOR", "SWE", "ISL",
-        "NLD", "BEL", "IRL", "GBR", "MLT" 
-        ],
-    "europe2": ["ITA", "ESP", "PRT", "FRA"],
-    "europe_rusia": [ "KAZ", "BLR",  "RUS", "UKR", "BGR", "CYP","GRC" , "TUR"],
-    "france": ["FRA", "TUN", "MAR", "CMR", "AGO", "CIV", "COD", "SEN"],
-    "spain": ["ESP", "PRT", "MAR", "STP", "AGO", "NGA", "SEN", "CMR", "COD", "TUN"],
-    "test": ["STP"],
-    "rusia": ["RUS", "BLR", "UKR", "BGR", "GRC", "CYP", "TUR"]
+#    "europe_balcanic": ["GRC","CYP",  "TUR", "BGR"], 
+#    "europe": [
+#        "LUX", "DEU", "AUT",  "HRV", "SVN", "HUN", "CZE", "SVK",  "POL",
+#        "ROU", "BGR", "TUR", "GRC", "CYP", "BLR",  "RUS", "UKR", "LTU", "LVA", "EST",
+#        "DNK", "FIN", "NOR", "SWE", "ISL",
+#        "NLD", "BEL", "IRL", "GBR", "MLT" 
+#        ],
+#    "europe2": ["ITA", "ESP", "PRT", "FRA"],
+#    "europe_rusia": [ "KAZ", "BLR",  "RUS", "UKR", "BGR", "CYP","GRC" , "TUR"],
+#    "france": ["FRA", "TUN", "MAR", "CMR", "AGO", "CIV", "COD", "SEN"],
+#    "spain": ["ESP", "PRT", "MAR", "STP", "AGO", "NGA", "SEN", "CMR", "COD", "TUN"],
+#    "test": ["STP"],
+    "europe_rusia": ["RUS", "BLR", "UKR", "BGR", "GRC", "CYP", "TUR"]
 }
-
-block = "rusia"
 
 
 # ===========================================================
@@ -59,7 +56,7 @@ block = "rusia"
 # Paths
 BASE_DIR = ROOT / "analysis_normalized"
 COMMUNITIES_DIR = BASE_DIR / "results" / "communities"
-SAVE_DIR = BASE_DIR / "sankey_diagrams"
+SAVE_DIR = ROOT / "docs" / "sankey_diagrams"
 
 LINK_WIDTH = 0.1
 
@@ -367,14 +364,13 @@ def sankey_membership_by_year(
     else:
         fig.show()
 
-#%%
 
 years = range(1995, 2023)
-countries_sel = COUNTRY_GROUPS[block]
-df = membership_by_year.loc[countries_sel]
-sankey_membership_by_year(
-    df,
-    years,
-    True,
-    SAVE_DIR,
-    block)
+for block, countries_sel in COUNTRY_GROUPS.items():
+    df = membership_by_year.loc[countries_sel]
+    sankey_membership_by_year(
+        df,
+        years,
+        True,
+        SAVE_DIR,
+        block)
