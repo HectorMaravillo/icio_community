@@ -3,6 +3,8 @@
 # ===========================================================
 from sklearn.manifold import Isomap, TSNE, MDS
 
+import umap
+
 import matplotlib.pyplot as plt
 
 
@@ -12,7 +14,9 @@ import matplotlib.pyplot as plt
 def draw(embedding,
          labels = None,
          color="black",
-         size = 30):
+         size = 30,
+         medoid_indices=None,
+         subtitle = None):
     fig, ax = plt.subplots(figsize=(12, 10), dpi=150)
     ax.scatter(embedding[:, 0], embedding[:, 1],
                     s=size, color=color, 
@@ -20,6 +24,23 @@ def draw(embedding,
                     linewidths=0.1,
                     alpha = 0.7,
                     )
+    if medoid_indices is not None:
+        medoid_colors = [
+            color[i] for i in medoid_indices
+        ]
+        ax.scatter(
+            embedding[medoid_indices, 0],
+            embedding[medoid_indices, 1],
+            s=size * 3,          # Mayor tamaño
+            marker="s",          # Forma cuadrada
+            c=medoid_colors,
+           # edgecolors="black",
+           # linewidths=1.5,
+            alpha=1,
+            zorder=10
+        )
+
+        ax.legend()
     if labels is not None:
         for i, country in enumerate(labels):
             ax.annotate(
@@ -35,6 +56,18 @@ def draw(embedding,
                     facecolor="white",
                     edgecolor="none",
                     alpha=0.65
+                )
+            )
+    if subtitle is not None:
+        ax.text(0.85, 0.9,
+            subtitle,
+            transform=ax.transAxes,
+            ha='center', fontsize=8,
+            bbox=dict(
+                facecolor='white',
+                edgecolor='lightgray',
+                boxstyle='round,pad=0.3',
+                alpha=0.8 
                 )
             )
     ax.grid(True,
@@ -80,6 +113,17 @@ def mds(distance_matrix, **params):
     )
     embedding = reducer.fit_transform(distance_matrix)
     return embedding
+
+def umap_reducer(distance_matrix, **params):
+    reducer = umap.UMAP(
+        n_components=2,
+        metric='precomputed',
+        n_neighbors = params["n_neighbors"],
+        min_dist = params["min_dist"],
+    )
+    embedding = reducer.fit_transform(distance_matrix)
+    return embedding
+
 
     
 # ===========================================================

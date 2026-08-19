@@ -30,7 +30,9 @@ SAVE_DIR = ROOT / "analysis_clustering" / "distance_matrices"
 # FUNCTIONS
 # ===========================================================
 
-def import_national_matrices(year):
+def import_national_matrices(
+        year,
+        coef_tecn = False):
     icio = ICIO_Network(
         year,
         normalize=False,
@@ -41,10 +43,18 @@ def import_national_matrices(year):
     )
     matrices = {}
     for country in countries:
-        matrix = icio.matrix.loc[country, country].to_numpy(dtype=float)       
-        # normalize national matrices
-        national_total = matrix.sum()
-        normalized_matrix = matrix / national_total
+        matrix = icio.matrix.loc[country, country].to_numpy(dtype=float)   
+        if coef_tecn:
+            national_total = matrix.sum(axis=0)
+            normalized_matrix = np.divide(
+                matrix, national_total,
+                out=np.zeros_like(matrix, dtype=float),
+                where=national_total != 0
+            )
+        else:
+            # normalize national matrices
+            national_total = matrix.sum()
+            normalized_matrix = matrix / national_total
         matrices[country] = normalized_matrix
 
     return matrices
@@ -65,19 +75,19 @@ def compute_distance_matrices(matrices, distance):
 # MAIN
 # ===========================================================
 
-#distance = lambda a, b: jensenshannon(
-#    a.ravel(),
-#    b.ravel(),
-#    base=2)
-#distance_name = "JS"
+distance = lambda a, b: jensenshannon(
+    a.ravel(),
+    b.ravel(),
+    base=2)
+distance_name = "JS_coef"
 
-distance = lambda a, b: np.linalg.norm(a - b, ord="fro")
-distance_name = "Frobenius"
+#distance = lambda a, b: np.linalg.norm(a - b, ord="fro")
+#distance_name = "Frobenius"
 
 for year in range(1995, 2023):
     print(f"Year: {year}")
     print("Importing data...")
-    matrices = import_national_matrices(year)
+    matrices = import_national_matrices(year, True)
     print("Computing distance matrix...")
     distance_matrix = compute_distance_matrices(
         matrices,
